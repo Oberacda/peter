@@ -43,9 +43,6 @@
             "Syntactic": "frequencies[character] +- 1;",
             "Replace": ["+=", "+-"]
         },
-
-
-
         "passwordgenerator": {
             "Correction": "char letter = alphabet[randomIndex];",
             "Semantic": "char letter = alphabet[index];",
@@ -81,6 +78,34 @@
             "Line": 20,
             "Syntactic": "merged.Add(length),",
             "Replace": [";", ","]
+        },
+        "linkedlist": {
+            "Correction": "currentEntry.deleteNextEntry();",
+            "Semantic": "currentEntry.next.deleteNextEntry();",
+            "Line": 9,
+            "Syntactic": "currentEntry.deleteNextEntry()",
+            "Replace": [";",""]
+        },
+        "emailuser": {
+            "Correction": "StyledText signature = (StyledText) getSettingOrAlternative("signature", defaultSignature);",
+            "Semantic": "StyledText signature = (StyledText) getSettingOrAlternative("signature", null);",
+            "Line": 17,
+            "Syntactic": "StyledText signature = (StyledText) getSettingOrAlternative("signature", defaultSignature];",
+            "Replace": [")","]"]
+        },
+        "converter": {
+            "Correction": "convertedInput += capitalizeFirstLetter(word);",
+            "Semantic": "convertedInput += lowercaseFirstLetter(word);",
+            "Line": 8,
+            "Syntactic": "convertedInput -= capitalizeFirstLetter(word);",
+            "Replace": ["+","-"]
+        },
+        "familymember": {
+            "Correction": "result |= parent.isParentOf(sibling);",
+            "Semantic":  "result |= sibling.isParentOf(parent);",
+            "Line": 25,
+            "Syntactic":  "result |= parent.isParentOf(sibling),",
+            "Replace": [";",","]
         }
     }
 }
