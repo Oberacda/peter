@@ -21,7 +21,6 @@
             "Syntactic": "setting.Add[identifier, property);",
             "Replace": ["(", "["]
         },
-
         "parsequerystring": {
             "Correction": "string parameterValue = setting[1];",
             "Semantic": "string parameterValue = parts[1];",
