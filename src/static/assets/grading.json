@@ -8,10 +8,10 @@
             "Replace": [";",""]
         },
         "emailuser": {
-            "Correction": "StyledText signature = (StyledText) getSettingOrAlternative("signature", defaultSignature);",
-            "Semantic": "StyledText signature = (StyledText) getSettingOrAlternative("signature", null);",
+            "Correction": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature);",
+            "Semantic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", null);",
             "Line": 17,
-            "Syntactic": "StyledText signature = (StyledText) getSettingOrAlternative("signature", defaultSignature];",
+            "Syntactic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature];",
             "Replace": [")","]"]
         },
         "converter": {
