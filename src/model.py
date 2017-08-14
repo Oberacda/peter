@@ -41,7 +41,7 @@ class Final(object):
     def __init__(self):
         self.tasks = ['semantic', 'syntactic']
         self.identifier_quality = ['short', 'normal']
-        self.group = self.group = ['converter', 'linkedlist', 'familymember', 'emailuser']
+        self.group = ['converter', 'linkedlist', 'familymember', 'emailuser']
         # self.group_a = ['parsequerystring', 'histogram', 'concatlists']
         # self.group_b = ['codestructure', 'readini', 'countchildren']
 
