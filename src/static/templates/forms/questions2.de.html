@@ -25,44 +25,6 @@
                 </thead>
                 <tbody>
                     <tr>
-                      <td>C#</td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.csharp" type="radio" name="csharp" value="0" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.csharp" type="radio" name="csharp" value="1" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.csharp" type="radio" name="csharp" value="2" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.csharp" type="radio" name="csharp" value="3" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.csharp" type="radio" name="csharp" value="4" required>
-                            </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
                       <td>Java</td>
                       <td>
                         <div class="radio radio-primary">
@@ -96,6 +58,44 @@
                         <div class="radio radio-primary">
                           <label>
                               <input ng-model="page.java" type="radio" name="java" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>C#</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.csharp" type="radio" name="csharp" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.csharp" type="radio" name="csharp" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.csharp" type="radio" name="csharp" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.csharp" type="radio" name="csharp" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.csharp" type="radio" name="csharp" value="4" required>
                             </label>
                         </div>
                       </td>
@@ -177,82 +177,6 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>F#</td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.fsharp" type="radio" name="fsharp" value="0" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.fsharp" type="radio" name="fsharp" value="1" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.fsharp" type="radio" name="fsharp" value="2" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.fsharp" type="radio" name="fsharp" value="3" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.fsharp" type="radio" name="fsharp" value="4" required>
-                            </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>VB.NET</td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.vbnet" type="radio" name="vbnet" value="0" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.vbnet" type="radio" name="vbnet" value="1" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.vbnet" type="radio" name="vbnet" value="2" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.vbnet" type="radio" name="vbnet" value="3" required>
-                            </label>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="radio radio-primary">
-                          <label>
-                              <input ng-model="page.vbnet" type="radio" name="vbnet" value="4" required>
-                            </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
                       <td>PHP</td>
                       <td>
                         <div class="radio radio-primary">
@@ -293,11 +217,11 @@
                 </tbody>
                 </table>
               </div>
-              <div ng-class="{ 'form-group': questionForm.years_experience_csharp.$pristine, 'form-group has-success': questionForm.years_experience_csharp.$touched && questionForm.years_experience_csharp.$valid, 'form-group has-error': !questionForm.years_experience_csharp.$pristine && questionForm.years_experience_csharp.$invalid }">
-                <legend for="years_experience_csharp">7. Wie viele Jahre Erfahrung haben Sie mit Java (regelmäßige Anwendung)? </legend>
+              <div ng-class="{ 'form-group': questionForm.years_experience_java.$pristine, 'form-group has-success': questionForm.years_experience_java.$touched && questionForm.years_experience_java.$valid, 'form-group has-error': !questionForm.years_experience_java.$pristine && questionForm.years_experience_java.$invalid }">
+                <legend for="years_experience_java">7. Wie viele Jahre Erfahrung haben Sie mit Java (regelmäßige Anwendung)? </legend>
                 <span class="help-block">Regelmäßige, professionelle Anwendung</span>
                 <div class="form-control-wrapper">
-                  <input ng-model="page.years_experience_csharp" type="number" min="0" max="100" class="form-control" name="years_experience_csharp" placeholder="Jahre" required>
+                  <input ng-model="page.years_experience_java" type="number" min="0" max="100" class="form-control" name="years_experience_java" placeholder="Jahre" required>
                 </div>
               </div>
               <div ng-class="{ 'form-group': questionForm.years_experience_any.$pristine, 'form-group has-success': questionForm.years_experience_any.$touched && questionForm.years_experience_any.$valid, 'form-group has-error': !questionForm.years_experience_any.$pristine && questionForm.years_experience_any.$invalid }">
