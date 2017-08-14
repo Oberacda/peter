@@ -22,7 +22,7 @@ angular
         },
         de: {
             label_close: 'Schließen',
-            label_about: 'Über mich',
+            label_about: 'Über den Entwickler',
             label_privacy: 'Datenschutz',
             label_mobile: 'Mobile Geräte',
             page_about: '/static/templates/partial/about.de.html',
