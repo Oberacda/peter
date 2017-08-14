@@ -31,7 +31,7 @@
         },
         {
             "text": [
-                "Hier sehen Sie ein Auszug aus einer Java Klasse.",
+                "Hier sehen Sie ein Auszug aus einer Java Klasse."
             ],
             "interactions": [
                 {
@@ -46,7 +46,7 @@
         {
             "text": [
                 "Ihre Aufgabe ist es, einen Fehler im Code zu finden.",
-                "Der Code kompiliert korrekt, aber er weist zur Laufzeit ein fehlerhaftes Verhalten auf. Die Funktion hat nur einen Fehler."
+                "Der Code kompiliert korrekt, aber er weist zur Laufzeit ein fehlerhaftes Verhalten auf. Der Fehler befindet sich in einer Zeile."
             ],
             "interactions": [
                 {
