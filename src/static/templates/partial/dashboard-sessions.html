@@ -40,7 +40,6 @@
     <pre><code>java < 1
 english_level < 4
 german_level < 4
-years_experience_csharp < 1
 trials < 6
 failed_trials >= 1
 elapsed_trials >= 1
@@ -83,8 +82,7 @@ encountered_distraction == 'yes' && elapsed_trials
               </a>
             </th>
             <th>Legacy</th>
-            <th>C#</th>
-            <th>C# Years</th>
+            <th>Java</th>
             <th>Muttersprache</th>
             <th>DE</th>
             <th>EN</th>
@@ -117,8 +115,7 @@ encountered_distraction == 'yes' && elapsed_trials
             <td><span ng-class="{'text-error': session.value.are_you_serious == 'no' }">{{ session.value.are_you_serious }}</span></td>
             <td><span ng-class="{'text-error': session.value.boomerang_participant == 'yes' }">{{ session.value.boomerang_participant }}</span></td>
             <td><span ng-class="{'text-error': session.value.legacy_participant == '2015' }">{{ session.value.legacy_participant }}</span></td>
-            <td><span ng-class="{'text-error': session.value.csharp < 3 }">{{ session.value.csharp }}</span></td>
-            <td><span ng-class="{'text-error': session.value.years_experience_csharp < 1 }">{{ session.value.years_experience_csharp }}</span></td>
+            <td><span ng-class="{'text-error': session.value.java < 1 }">{{ session.value.csharp }}</span></td>
             <td>{{ session.value.mother_tounge }}</td>
             <td><span ng-class="{'text-error': session.value.german_level < 4 }">{{ session.value.german_level }}</span></td>
             <td><span ng-class="{'text-error': session.value.english_level < 4 }">{{ session.value.english_level }}</span></td>
