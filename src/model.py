@@ -20,8 +20,7 @@ class Pretest(object):
     SEQUENCE_LENGTH = 2
 
     def __init__(self):
-        self.group_a = ['replace', 'parsequerystring', 'passwordgenerator', 'histogram', 'reverse']
-        self.group_b = ['codestructure', 'parseini', 'mergelists', 'countchildren', 'sumscores']
+        self.group = ['converter', 'linkedlist', 'familymember', 'emailuser']
 
     def ordering(self, snippets):
         return list(itertools.permutations(snippets, self.SEQUENCE_LENGTH))
@@ -31,7 +30,7 @@ class Pretest(object):
 
     def seed(self):
         normal_condition = lambda s: self.trial(s, 'semantic.normal')
-        pretest = self.ordering(self.group_a) + self.ordering(self.group_b)
+        pretest = self.ordering(self.group)
         trials = [[normal_condition(a), normal_condition(b)] for a,b in pretest]
         random.shuffle(trials)
         return trials
@@ -42,8 +41,9 @@ class Final(object):
     def __init__(self):
         self.tasks = ['semantic', 'syntactic']
         self.identifier_quality = ['short', 'normal']
-        self.group_a = ['parsequerystring', 'histogram', 'concatlists']
-        self.group_b = ['codestructure', 'readini', 'countchildren']
+        self.group = self.group = ['converter', 'linkedlist', 'familymember', 'emailuser']
+        # self.group_a = ['parsequerystring', 'histogram', 'concatlists']
+        # self.group_b = ['codestructure', 'readini', 'countchildren']
 
     def _task_group(self, snippets, task):
         return ["%s.%s" % (s, task) for s in snippets]
@@ -76,16 +76,21 @@ class Final(object):
     def seed(self):
         semantic,syntactic = self.tasks
 
-        semantic_group_a = self._task_group(self.group_a, semantic)
-        syntactic_group_a = self._task_group(self.group_a, syntactic)
+        semantic_group = self._task_group(self.group, semantic)
+        syntactic_group = self._task_group(self.group, syntactic)
 
-        semantic_group_b = self._task_group(self.group_b, semantic)
-        syntactic_group_b = self._task_group(self.group_b, syntactic)
+        snippets = self._shuffle_blocks(semantic_group, syntactic_group)
 
-        block1 = self._shuffle_blocks(semantic_group_a, syntactic_group_b)
-        block2 = self._shuffle_blocks(semantic_group_b, syntactic_group_a)
+        # semantic_group_a = self._task_group(self.group_a, semantic)
+        # syntactic_group_a = self._task_group(self.group_a, syntactic)
+        #
+        # semantic_group_b = self._task_group(self.group_b, semantic)
+        # syntactic_group_b = self._task_group(self.group_b, syntactic)
 
-        snippets = itertools.chain(block1, block2)
+        # block1 = self._shuffle_blocks(semantic_group_a, syntactic_group_b)
+        # block2 = self._shuffle_blocks(semantic_group_b, syntactic_group_a)
+
+        # snippets = itertools.chain(block1, block2)
         return snippets
 
 

@@ -219,10 +219,9 @@ angular.module('admin', ['ngRoute', 'ngSanitize', 'charts', 'experimentControls'
             return false;
         }
 
-        return (session.csharp < 3)
-            || (session.english_level < 4)
+        return (session.java < 1)
+            || (session.english_level < 3)
             || (session.german_level < 4)
-            || (session.years_experience_csharp < 1)
             || (session.trials < 6)
             || (session.failed_trials > 1)
             || (session.are_you_serious == 'no')
