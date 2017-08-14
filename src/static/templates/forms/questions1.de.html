@@ -46,7 +46,7 @@
                 <legend for="subject">4. Welchen Titel haben Sie genau erlangt? </legend>
                 <span class="help-block">Zum Beispiel: Dipl.-Inform. (FH), Fachinformatiker.</span>
                 <div class="form-control-wrapper">
-                  <input ng-model="page.subject" class="form-control" type="text" name="subject" placeholder="Fachrichtung" required>
+                  <input ng-model="page.subject" class="form-control" type="text" name="subject" placeholder="Fachrichtung">
                 </div>
               </div>
               <div ng-class="{ 'form-group': questionForm.academic_degree.$pristine, 'form-group has-success': questionForm.academic_degree.$touched && questionForm.academic_degree.$valid, 'form-group has-error': !questionForm.academic_degree.$pristine && questionForm.academic_degree.$invalid }">

@@ -23,7 +23,7 @@
                 </div>
                 <div class="radio radio-primary">
                   <label>
-                    <input ng-model="page.sex" type="radio" name="sex" value="o" required>Andere
+                    <input ng-model="page.sex" type="radio" name="sex" value="o" required>Andere/ Keine Angabe
                   </label>
                 </div>
               </div>
@@ -146,47 +146,20 @@
                   <input ng-model="page.how_did_you_find_us" class="form-control" type="text" name="how_did_you_find_us" placeholder="Info" >
                 </div>
               </div>
-              <div ng-class="{ 'form-group': questionForm.is_twitter_follower.$pristine, 'form-group has-success': questionForm.is_twitter_follower.$touched && questionForm.is_twitter_follower.$valid, 'form-group has-error': !questionForm.is_twitter_follower.$pristine && questionForm.is_twitter_follower.$invalid }">
-                <legend for="is_twitter_follower">21. Folgen Sie dem Account @pro_cessor auf Twitter? </legend>
-                <div class="radio radio-primary">
-                  <label>
-                    <input ng-model="page.is_twitter_follower" type="radio" name="is_twitter_follower" value="yes" required>Ja
-                  </label>
-                </div>
-                <div class="radio radio-primary">
-                  <label>
-                    <input ng-model="page.is_twitter_follower" type="radio" name="is_twitter_follower" value="no" required>Nein
-                  </label>
-                </div>
-              </div>
-              <div ng-class="{ 'form-group': questionForm.has_heard_presentation.$pristine, 'form-group has-success': questionForm.has_heard_presentation.$touched && questionForm.has_heard_presentation.$valid, 'form-group has-error': !questionForm.has_heard_presentation.$pristine && questionForm.has_heard_presentation.$invalid }">
-                <legend for="has_heard_presentation">22. Haben Sie schonmal einen Vortrag von mir (Johannes Hofmeister) gesehen? </legend>
-                <span class="help-block">bspw. auf einer Konferenz, OpenSpace, etc.</span>
-                <div class="radio radio-primary">
-                  <label>
-                    <input ng-model="page.has_heard_presentation" type="radio" name="has_heard_presentation" value="yes" required>Ja
-                  </label>
-                </div>
-                <div class="radio radio-primary">
-                  <label>
-                    <input ng-model="page.has_heard_presentation" type="radio" name="has_heard_presentation" value="no" required>Nein
-                  </label>
-                </div>
-              </div>
               <div ng-class="{ 'form-group': questionForm.guess_hypothesis.$pristine, 'form-group has-success': questionForm.guess_hypothesis.$touched && questionForm.guess_hypothesis.$valid, 'form-group has-error': !questionForm.guess_hypothesis.$pristine && questionForm.guess_hypothesis.$invalid }">
-                <legend for="guess_hypothesis">23. Was glauben Sie, wurde hier untersucht? </legend>
+                <legend for="guess_hypothesis">21. Was glauben Sie, wurde hier untersucht? </legend>
                 <div class="form-control-wrapper">
                   <textarea ng-model="page.guess_hypothesis" class="form-control" name="guess_hypothesis" placeholder="Ihre Hypothese" rows="3" required></textarea>
                 </div>
               </div>
               <div ng-class="{ 'form-group': questionForm.issues.$pristine, 'form-group has-success': questionForm.issues.$touched && questionForm.issues.$valid, 'form-group has-error': !questionForm.issues.$pristine && questionForm.issues.$invalid }">
-                <legend for="issues">24. Hatten Sie bei der Durchführung technische Schwierigkeiten? (optional)</legend>
+                <legend for="issues">22. Hatten Sie bei der Durchführung technische Schwierigkeiten? (optional)</legend>
                 <div class="form-control-wrapper">
                   <textarea ng-model="page.issues" class="form-control" name="issues" placeholder="Probleme" rows="3" ></textarea>
                 </div>
               </div>
               <div ng-class="{ 'form-group': questionForm.kotzbox.$pristine, 'form-group has-success': questionForm.kotzbox.$touched && questionForm.kotzbox.$valid, 'form-group has-error': !questionForm.kotzbox.$pristine && questionForm.kotzbox.$invalid }">
-                <legend for="kotzbox">25. Haben Sie Kommentare, Anregungen oder Kritik, die Sie gerne mitteilen würden? (optional)</legend>
+                <legend for="kotzbox">23. Haben Sie Kommentare, Anregungen oder Kritik, die Sie gerne mitteilen würden? (optional)</legend>
                 <div class="form-control-wrapper">
                   <textarea ng-model="page.kotzbox" class="form-control" name="kotzbox" placeholder="Kommentare" rows="5" ></textarea>
                 </div>

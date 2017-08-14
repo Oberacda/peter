@@ -8,9 +8,9 @@
     "description": "Beschreibung (optional)",
     "correction": "Korrektur",
     "email_submitted": "Danke!",
-    "example_correction": "LastName = lastName;",
-    "example_description": "Das Property LastName sollte lastName speichern, nicht firstName",
-    "example_line_number": 12,
+    "example_correction": "lastName = lastName;",
+    "example_description": "Das Attribut lastName sollte lastName speichern, nicht firstName",
+    "example_line_number": 8,
     "instruction_notice": "(Bitte lesen Sie die Anweisungen unten und klicken Sie dann auf Weiter)",
     "label_about": "Über",
     "label_mobile": "Mobilgeräte",
@@ -67,4 +67,3 @@
     "time_notice": "Sie haben maximal 10 Minuten Zeit.",
     "time_warning": "Bitte beenden Sie den Durchgang in den nächsten 2 Minuten."
 }}
-
