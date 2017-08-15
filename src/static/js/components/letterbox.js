@@ -112,6 +112,7 @@
             reset: reset,
             scrollDown: function () { scrollShield(DOWN); },
             scrollUp: function () { scrollShield(UP); },
+            canScroll: canScroll,
             uncover: uncover
         }
     };

@@ -53,7 +53,7 @@ angular.module('tutorial', ['ngSanitize', 'experimentControls'])
                 up: frame.scrollUp,
                 down:  function () {
                     frame.scrollDown();
-                    if(frame.currentLine()[1] == 14) {
+                    if(!frame.canScroll(1)) {
                         scope.$apply(function () {
                             scope.showNextButton = true;
                         });
