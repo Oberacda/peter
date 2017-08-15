@@ -5,6 +5,7 @@ import collections
 import itertools
 import logging
 import random
+import copy
 
 AGENT_FIELD = 'agent'
 EMAILS_COLLECTION = 'emails'
@@ -73,24 +74,46 @@ class Final(object):
     def _flatten_block(self, block):
         return (a + b for a,b in block)
 
+    # def seed(self):
+    #     semantic,syntactic = self.tasks
+    #
+    #     semantic_group = self._task_group(self.group, semantic)
+    #     syntactic_group = self._task_group(self.group, syntactic)
+    #
+    #     snippets = self._shuffle_blocks(semantic_group, syntactic_group)
+    #
+    #     # semantic_group_a = self._task_group(self.group_a, semantic)
+    #     # syntactic_group_a = self._task_group(self.group_a, syntactic)
+    #     #
+    #     # semantic_group_b = self._task_group(self.group_b, semantic)
+    #     # syntactic_group_b = self._task_group(self.group_b, syntactic)
+    #
+    #     # block1 = self._shuffle_blocks(semantic_group_a, syntactic_group_b)
+    #     # block2 = self._shuffle_blocks(semantic_group_b, syntactic_group_a)
+    #
+    #     # snippets = itertools.chain(block1, block2)
+    #     return snippets
+
+    def _addAttribute(self, snippet, attribute):
+        return "%s.%s" % (snippet, attribute)
+
+    def _addHtml(self, snippet):
+        return "%s.html" % (snippet)
+
+    # eigene neue Seed-Funktion
     def seed(self):
-        semantic,syntactic = self.tasks
+        # Permutationen der Codebeispiele erstellen (16)
+        snippet_perms = itertools.permutations(self.group)
 
-        semantic_group = self._task_group(self.group, semantic)
-        syntactic_group = self._task_group(self.group, syntactic)
+        # 1, 2 sem; 3,4 synt.
+        snippet_perms = map(lambda p:(self._addAttribute(p[0], self.tasks[0]),self._addAttribute(p[1], self.tasks[0]),self._addAttribute(p[2], self.tasks[1]),self._addAttribute(p[3], self.tasks[1])), snippet_perms)
 
-        snippets = self._shuffle_blocks(semantic_group, syntactic_group)
+        # je head und tail mit k/n
+        snippetsA = map(lambda p:(self._addAttribute(p[0], self.identifier_quality[0]),self._addAttribute(p[1], self.identifier_quality[1]),self._addAttribute(p[2], self.identifier_quality[0]),self._addAttribute(p[3], self.identifier_quality[1])), snippet_perms)
+        snippetsB = map(lambda p:(self._addAttribute(p[0], self.identifier_quality[1]),self._addAttribute(p[1], self.identifier_quality[0]),self._addAttribute(p[2], self.identifier_quality[1]),self._addAttribute(p[3], self.identifier_quality[0])), snippet_perms)
 
-        # semantic_group_a = self._task_group(self.group_a, semantic)
-        # syntactic_group_a = self._task_group(self.group_a, syntactic)
-        #
-        # semantic_group_b = self._task_group(self.group_b, semantic)
-        # syntactic_group_b = self._task_group(self.group_b, syntactic)
-
-        # block1 = self._shuffle_blocks(semantic_group_a, syntactic_group_b)
-        # block2 = self._shuffle_blocks(semantic_group_b, syntactic_group_a)
-
-        # snippets = itertools.chain(block1, block2)
+        snippets = snippetsA + snippetsB
+        snippets = [[self._addHtml(item) for item in sequence] for sequence in snippets]
         return snippets
 
 
