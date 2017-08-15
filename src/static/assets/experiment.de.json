@@ -67,7 +67,7 @@
         {
             "text": [
                 "Sie haben nun 2 Snippets bearbeitet, in denen Sie jeweils einen inhaltlichen Fehler gefunden haben.",
-                "Sie sehen in diesem Abschnitt zwei weitere Snippets (A und B). Diesmal ist Ihre Aufgabe, einen <b>Syntaxfehler</b> zu finden. Diese Aufgabe ist einfacher, daher dauert die Bearbeitung dieser 3 Snippets zusammen voraussichtlich so lange wie einer der vorherigen Abschnitte.",
+                "Sie sehen in diesem Abschnitt zwei weitere Snippets (A und B). Diesmal ist Ihre Aufgabe, einen <b>Syntaxfehler</b> zu finden. Diese Aufgabe ist einfacher, daher dauert die Bearbeitung dieser 2 Snippets zusammen voraussichtlich so lange wie einer der vorherigen Abschnitte.",
                 "Der Code ist diesmal also inhaltlich korrekt, aber er kann wegen des Syntaxfehlers <b>nicht kompiliert</b> werden."
             ],
             "interactions": [
