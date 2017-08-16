@@ -1,11 +1,33 @@
 <pre class="line-numbers"><code class="language-java"><span class="line"><span class="token comment" spellcheck="true">// Represents a person in the database</span></span>
 <span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span></span>
-<span class="line">	<span class="token keyword">public</span> String firstName<span class="token punctuation">;</span></span>
-<span class="line">	<span class="token keyword">public</span> String lastName<span class="token punctuation">;</span></span>
+<span class="line">	<span class="token keyword">private</span> String firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">;</span></span>
+<span class="line">	Date birthDate<span class="token punctuation">;</span></span>
 <span class="line"></span>
-<span class="line">	<span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span>String firstName<span class="token punctuation">,</span> String lastName<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">	<span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span>String firstName<span class="token punctuation">,</span> String lastName<span class="token punctuation">,</span> Date birthdate<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">		firstName <span class="token operator">=</span> firstName<span class="token punctuation">;</span></span>
 <span class="line">		lastName <span class="token operator">=</span> firstName<span class="token punctuation">;</span></span>
+<span class="line">		birthDate <span class="token operator">=</span> birthdate<span class="token punctuation">;</span></span>
 <span class="line">	<span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">	<span class="token keyword">public</span> String <span class="token function">getFirstName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">		<span class="token keyword">return</span> firstName<span class="token punctuation">;</span></span>
+<span class="line">	<span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">	<span class="token keyword">public</span> String <span class="token function">getLastName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">		<span class="token keyword">return</span> lastName<span class="token punctuation">;</span></span>
+<span class="line">	<span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setFirstName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">		firstName <span class="token operator">=</span> name<span class="token punctuation">;</span></span>
+<span class="line">	<span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLastName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">		lastName <span class="token operator">=</span> name<span class="token punctuation">;</span></span>
+<span class="line">	<span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAgeInYears</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">		Date age <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">today</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> birthDate<span class="token punctuation">;</span></span>
+<span class="line">		<span class="token keyword">return</span> age<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">	<span class="token punctuation">}</span>	</span>
 <span class="line"><span class="token punctuation">}</span>
 </code></pre>
