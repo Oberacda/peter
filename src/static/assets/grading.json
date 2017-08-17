@@ -15,17 +15,17 @@
             "Replace": [")","]"]
         },
         "converter": {
-            "Correction": "convertedInput += capitalizeFirstLetter(word);",
-            "Semantic": "convertedInput += lowercaseFirstLetter(word);",
+            "Correction": "convertedInput += capitalizeFirstLetter(singleWordParts[i]);",
+            "Semantic": "convertedInput += lowercaseFirstLetter(singleWordParts[i]);",
             "Line": 8,
-            "Syntactic": "convertedInput -= capitalizeFirstLetter(word);",
+            "Syntactic": "convertedInput -= capitalizeFirstLetter(singleWordParts[i]);",
             "Replace": ["+","-"]
         },
         "familymember": {
-            "Correction": "result |= parent.isParentOf(sibling);",
-            "Semantic":  "result |= sibling.isParentOf(parent);",
-            "Line": 25,
-            "Syntactic":  "result |= parent.isParentOf(sibling),",
+            "Correction": "result = result || parent.isParentOf(sibling);",
+            "Semantic":  "result = result || sibling.isParentOf(parent);",
+            "Line": 22,
+            "Syntactic":  "result = result || parent.isParentOf(sibling),",
             "Replace": [";",","]
         }
     }
