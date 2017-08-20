@@ -47,6 +47,7 @@ div.cover {
     background-color: #eee;
     height: 100%;
     position: relative;
+    z-index: 200;
 }
 div.cover:first-child {
   border-bottom: 1px solid #ccc;
