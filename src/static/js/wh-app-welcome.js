@@ -16,16 +16,22 @@ angular
             label_about: 'About',
             label_privacy: 'Privacy',
             label_mobile: 'Mobile Devices',
-            page_about: '/static/templates/partial/about.en.html',
+            page_aboutHofmeister: '/static/templates/partial/aboutHofmeister.en.html',
+            page_aboutMe: '/static/templates/partial/aboutMe.en.html',
+            page_aboutProject: '/static/templates/partial/about.en.html',
             page_mobile: '/static/templates/partial/mobile.en.html',
             page_privacy: '/static/templates/partial/datenschutz.en.html'
         },
         de: {
             label_close: 'Schließen',
-            label_about: 'Über den Entwickler',
+            label_aboutHofmeister: 'Über den Entwickler',
+            label_aboutProject: 'Über das Project',
+            label_aboutMe: 'Über Annika Berger',
             label_privacy: 'Datenschutz',
             label_mobile: 'Mobile Geräte',
-            page_about: '/static/templates/partial/about.de.html',
+            page_aboutHofmeister: '/static/templates/partial/aboutHofmeister.de.html',
+            page_aboutMe: '/static/templates/partial/aboutMe.de.html',
+            page_aboutProject: '/static/templates/partial/about.de.html',
             page_mobile: '/static/templates/partial/mobile.de.html',
             page_privacy: '/static/templates/partial/datenschutz.de.html'
         }
@@ -69,8 +75,14 @@ angular
 
 
 .controller('footerController', ['$scope', 'language', 'messageBoxService', function ($scope, language, messageBox) {
-    this.about = function () {
-        messageBox.show(language.label_about, language.page_about, $scope);
+    this.aboutProject = function () {
+        messageBox.show(language.label_aboutProject, language.page_aboutProject, $scope);
+    };
+    this.aboutMe = function() {
+        messageBox.show(language.label_aboutMe, language.page_aboutMe, $scope);
+    };
+    this.aboutHofmeister = function() {
+        messageBox.show(language.label_aboutHofmeister, language.page_aboutHofmeister, $scope);
     };
     this.datenschutz = function () {
         messageBox.show(language.label_privacy, language.page_privacy, $scope);

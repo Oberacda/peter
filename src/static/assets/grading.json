@@ -3,7 +3,7 @@
         "linkedlist": {
             "Correction": "currentEntry.deleteNextEntry();",
             "Semantic": "currentEntry.next.deleteNextEntry();",
-            "Line": 11,
+            "Line": 12,
             "Syntactic": "currentEntry.deleteNextEntry()",
             "Replace": [";",""]
         },
@@ -17,7 +17,7 @@
         "converter": {
             "Correction": "convertedInput += capitalizeFirstLetter(singleWordParts[i]);",
             "Semantic": "convertedInput += lowercaseFirstLetter(singleWordParts[i]);",
-            "Line": 8,
+            "Line": 9,
             "Syntactic": "convertedInput -= capitalizeFirstLetter(singleWordParts[i]);",
             "Replace": ["+","-"]
         },

@@ -120,6 +120,11 @@
                     <input ng-model="page.legacy_participant" type="radio" name="legacy_participant" value="2013" required>Ja, August 2013
                   </label>
                 </div>
+                <div class="radio radio-primary">
+                  <label>
+                    <input ng-model="page.legacy_participant" type="radio" name="legacy_participant" value="2017" required>Ja, August 2017
+                  </label>
+                </div>
               </div>
               <div ng-class="{ 'form-group': questionForm.would_participate_again.$pristine, 'form-group has-success': questionForm.would_participate_again.$touched && questionForm.would_participate_again.$valid, 'form-group has-error': !questionForm.would_participate_again.$pristine && questionForm.would_participate_again.$invalid }">
                 <legend for="would_participate_again">19. Würden Sie noch einmal an einer ähnlichen Studie teilnehmen? </legend>
@@ -149,7 +154,7 @@
               <div ng-class="{ 'form-group': questionForm.guess_hypothesis.$pristine, 'form-group has-success': questionForm.guess_hypothesis.$touched && questionForm.guess_hypothesis.$valid, 'form-group has-error': !questionForm.guess_hypothesis.$pristine && questionForm.guess_hypothesis.$invalid }">
                 <legend for="guess_hypothesis">21. Was glauben Sie, wurde hier untersucht? </legend>
                 <div class="form-control-wrapper">
-                  <textarea ng-model="page.guess_hypothesis" class="form-control" name="guess_hypothesis" placeholder="Ihre Hypothese" rows="3" required></textarea>
+                  <textarea ng-model="page.guess_hypothesis" class="form-control" name="guess_hypothesis" placeholder="Ihre Hypothese" rows="3"></textarea>
                 </div>
               </div>
               <div ng-class="{ 'form-group': questionForm.issues.$pristine, 'form-group has-success': questionForm.issues.$touched && questionForm.issues.$valid, 'form-group has-error': !questionForm.issues.$pristine && questionForm.issues.$invalid }">
