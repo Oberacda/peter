@@ -3,7 +3,7 @@
         "linkedlist": {
             "Correction": "currentEntry.deleteNextEntry();",
             "Semantic": "currentEntry.next.deleteNextEntry();",
-            "Line": 9,
+            "Line": 11,
             "Syntactic": "currentEntry.deleteNextEntry()",
             "Replace": [";",""]
         },
