@@ -103,3 +103,7 @@ textarea.description, input[type="number"].line-number:focus {
 textarea.description {
     width: 100%;
 }
+
+.image-circle {
+    border-radius: 150px;
+}
