@@ -226,7 +226,7 @@ angular.module('admin', ['ngRoute', 'ngSanitize', 'charts', 'experimentControls'
             || (session.failed_trials > 1)
             || (session.are_you_serious == 'no')
             || (session.boomerang_participant == 'yes')
-            || (session.legacy_participant == '2015');
+            || (session.legacy_participant == '2017');
     };
 
     $scope.setValid = function (session) {
