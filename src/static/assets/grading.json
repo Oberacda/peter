@@ -24,7 +24,7 @@
         "familymember": {
             "Correction": "result = result || parent.isParentOf(sibling);",
             "Semantic":  "result = result || sibling.isParentOf(parent);",
-            "Line": 22,
+            "Line": 23,
             "Syntactic":  "result = result || parent.isParentOf(sibling),",
             "Replace": [";",","]
         }
