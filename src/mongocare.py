@@ -4,9 +4,8 @@ __all__ = [
     'does_not_contain', 'isotimestamp',
     'in_', 'increment', 'inc', 'mark', 'nin', 'not_in',
     'equals', 'exists', 'get', 'increment', 'set_',
-    'not_exists', 'ObjectDict', 'or_', 'parse_iso_datetime', 'push', 'pk', 'update'
-
-    ,'match', 'project', 'size'
+    'not_exists', 'ObjectDict', 'or_', 'parse_iso_datetime', 'push', 'pk',
+    'update', 'match', 'project', 'size'
 ]
 
 from datetime import datetime
