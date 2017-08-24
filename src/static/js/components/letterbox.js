@@ -69,11 +69,11 @@
 
         function highlightLine(number) {
             function findLine (number) {
-                return $('*[data-line="' + number.toString() + '"]');
+                return $('#code .line:eq(' + (number-1) + ')');
             }
             function highlight (line) {
                 line.addClass('active');
-                return line.find('span.sourcecode').text().trim();
+                return line.text().trim();
             }
             function isInVisibleRange (number) {
                 var visibleArea = currentLine();
