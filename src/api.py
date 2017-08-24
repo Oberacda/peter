@@ -273,6 +273,43 @@ class Form(Api):
 
         self.data("Success")
 
+class Sessions(Api):
+    def initialize(self, sessions):
+        self.sessions = sessions
+
+    @familiar
+    def get(self):
+        sessions = yield self.sessions.list()
+        user = self.current_user
+        userSession = yield self.sessions.for_(user)
+
+        # returns a list of all events of a session needed to calculate its duration
+        def getEventsInSession(session):
+            trials = session.get('trials', [])
+            sessionEvents = []
+            for trial in trials:
+                sessionEvents.append(eventsForTime(trial['events']))
+            return sessionEvents
+
+        # picks all events which are needed to calculate duration
+        def eventsForTime(snippetEvents):
+            events = []
+            for event in snippetEvents:
+                if event['type'] == "Snippet":
+                    if (event['code'] == "Start" or event['code'] == "Feedback Closed" or event['code'] == "Done") :
+                        events.append(event)
+            return events
+
+        dataOfAllSessions = []
+
+        for session in sessions:
+            if session['_id'] != userSession['_id']:
+                dataOfSession = yield self.sessions.for_(session['_id'])
+                dataOfAllSessions.append(getEventsInSession(dataOfSession))
+
+        result = {'current': getEventsInSession(userSession), 'others': dataOfAllSessions}
+        self.data(result)
+
 
 class Duplicates(Admin):
     def initialize(self, sessions, trials):
