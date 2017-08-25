@@ -114,6 +114,7 @@ class Final(object):
 
         snippets = snippetsA + snippetsB
         snippets = [[self._addHtml(item) for item in sequence] for sequence in snippets]
+        random.shuffle(snippets)
         return snippets
 
 
