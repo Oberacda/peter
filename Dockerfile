@@ -7,6 +7,11 @@ MAINTAINER Johannes Hofmeister <docker@spam.cessor.de>
 # To Run:
 # docker run --name peter -d -p 5000:5000 --link mongodb:mongodb cessor/peter
 
+RUN echo http://dl-4.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories
+RUN apk add --no-cache mongodb
+VOLUME /data/db
+
+
 RUN apk add --update bash curl g++ python python-dev py-pip && \
     rm -rf /var/cache/apk/*
 
@@ -27,4 +32,4 @@ RUN python -c "import random,string; print ''.join([random.choice(string.letters
 RUN echo Your Password for /admin/login is: $(cat /var/peter/.key)
 
 ENV PETER_ENV=docker
-CMD python /var/peter/serve-fast.py
+CMD { mongod &  python /var/peter/serve-fast.py ; }
