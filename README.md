@@ -26,31 +26,23 @@ Using Docker
 
 The simplest way to get the software to run is to use the provided docker file to build an image and run it containers. We provide one for mongodb and one for the application itself. To build & run the mongodb image, use the script ```<repository>/run_mongo.sh``` and ```<repository>/run.sh``` or manually run the following commands from the root of the checked out repository:
 
-Build the mongodb image:
-
-    $ docker build -t cessor/mongodb -f mongodb.Dockerfile .
-
 Build the web application's image:
 
     $ docker build -t cessor/peter -f Dockerfile .
 
 Please watch the build. During the build, docker creates a random password for the admin interface. Write it down, as you will need it later. If you miss this step or forget the password, you can [retrieve it](https://github.com/empathic-code/peter#notes).
 
-Fire up the mongdb container:
-
-    $ docker run --name mongodb -d -v $(pwd)/data:/data/db cessor/mongodb
-
 I am using the empty data folder provided with this repository to store the mongodb files. You can, of course, use any other folder you like.
 
 Fire up the web application's container:
 
-    $ docker run --name peter -d -p 5000:5000 --link mongodb:mongodb cessor/peter
+    $ docker run --name peter -d -p 5000:5000 -v $(pwd)/data:/data/db cessor/peter
 
 If you wish to manipulate the source code, you can also fire up the container and override the source code directory in the image (you don't need to rebuild):
 
-    $ docker run --name peter -d -p 5000:5000 --link mongodb:mongodb -v $(pwd)/src:/var/peter cessor/peter
+    $ docker run --name peter -d -p 5000:5000 -v $(pwd)/data:/data/db -v $(pwd)/src:/var/peter cessor/peter
 
-If everything worked out fine you should have two containers running (see ```docker ps```): mongodb and peter
+If everything worked out fine you should have one container running (see ```docker ps```): peter
 
 
 Bare Metal
