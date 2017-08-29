@@ -28,7 +28,7 @@ The simplest way to get the software to run is to use the provided docker file t
 
 Build the web application's image:
 
-    $ docker build -t cessor/peter -f Dockerfile .
+    $ docker build -t acberger/peter -f Dockerfile .
 
 Please watch the build. During the build, docker creates a random password for the admin interface. Write it down, as you will need it later. If you miss this step or forget the password, you can [retrieve it](https://github.com/empathic-code/peter#notes).
 
@@ -36,11 +36,11 @@ I am using the empty data folder provided with this repository to store the mong
 
 Fire up the web application's container:
 
-    $ docker run --name peter -d -p 5000:5000 -v $(pwd)/data:/data/db cessor/peter
+    $ docker run --name peter -d -p 5000:5000 -v "$(pwd)"/data:/data/db acberger/peter
 
 If you wish to manipulate the source code, you can also fire up the container and override the source code directory in the image (you don't need to rebuild):
 
-    $ docker run --name peter -d -p 5000:5000 -v $(pwd)/data:/data/db -v $(pwd)/src:/var/peter cessor/peter
+    $ docker run --name peter -d -p 5000:5000 -v "$(pwd)"/data:/data/db -v "$(pwd)"/src:/var/peter acberger/peter
 
 If everything worked out fine you should have one container running (see ```docker ps```): peter
 
