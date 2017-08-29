@@ -109,28 +109,30 @@ angular
             $scope.formdata = {};
             $scope.email_submitted = true;
         });
-        // delete cookie
-        document.cookie = 'USER_SESSION_ID' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     };
 
+    $http
+    .get(api.sessions)
+    .success(function(sessiondata) {
+        // $scope.text = sessiondata;
+        $scope.show_results = true;
+        var userTime = getTimeForSession(sessiondata.data.current);
+        $scope.mytime = msToMinAndS(userTime);
+        var times = getTimesForAll(sessiondata.data.others);
+        $scope.percentage = calculatePercentageWorse(userTime, times);
+        times.push(userTime);
+        $scope.average = msToMinAndS(getAverageTime(times));
+        // delete cookie
+        document.cookie = 'USER_SESSION_ID' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    })
+    .error(function(message) {
+        $scope.text = message;
+        // delete cookie
+        document.cookie = 'USER_SESSION_ID' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    });
+
     this.collectData = function () {
-        $http
-        .get(api.sessions)
-        .success(function(sessiondata) {
-            // $scope.text = sessiondata;
-            $scope.show_results = true;
-            var userTime = getTimeForSession(sessiondata.data.current);
-            $scope.mytime = msToMinAndS(userTime);
-            var times = getTimesForAll(sessiondata.data.others);
-            $scope.percentage = calculatePercentageWorse(userTime, times);
-            times.push(userTime);
-            $scope.average = msToMinAndS(getAverageTime(times));
-            // delete cookie
-            document.cookie = 'USER_SESSION_ID' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        })
-        .error(function(message) {
-            $scope.text = message;
-        });
+
     }
 }])
 
