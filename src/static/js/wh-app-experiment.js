@@ -123,6 +123,14 @@ function ($http, $q, $scope, $sce, $timeout, $window, api, experiment) {
     $scope.current = current_snippet + 1;
     $scope.report = new Report();
     $scope.showProgress = true;
+    $scope.complete = false;
+
+    window.onbeforeunload = function(e) {
+        if (!$scope.complete) {
+            e.returnValue = '';
+            return '';
+        }
+    };
 
     var letterbox = new Letterbox();
     var keyboard = new Keyboard();
@@ -243,6 +251,7 @@ function ($http, $q, $scope, $sce, $timeout, $window, api, experiment) {
     }
 
     function finish () {
+        $scope.complete = true;
         $window.location.href = api.page_questions;
     }
 
