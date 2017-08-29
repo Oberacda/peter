@@ -51,8 +51,6 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
     }
     $scope.pages = ($scope.pages || []);
     $scope.page = ($scope.pages[$routeParams.question || 1] || {});
-    console.log($scope.page);
-    console.log($scope.pages);
     // TODO http anfrage hole Daten (-> sync über angular)
 /*    $http
     .get(api.form_target)
