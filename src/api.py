@@ -5,7 +5,7 @@ import datetime
 
 from model import ADMIN_ID
 from bson import json_util
-from web import Authenticated, familiar
+from web import Authenticated, familiar, fast
 
 
 class Api(Authenticated):
@@ -239,7 +239,7 @@ class EmailForm(Api):
     def initialize(self, emails):
         self.emails = emails
 
-    @familiar
+    @fast
     def post(self):
         result = yield self.emails.add(self.json)
         self.data("Success")
