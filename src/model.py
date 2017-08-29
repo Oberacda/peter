@@ -309,6 +309,9 @@ class Sessions(object):
 
     def save_form(self, session_id, questions):
         questions = mark(questions)
+        source = questions.get('source')
+        self.collection.update(document(USER_SESSION_ID, session_id), pull(FORMS_FIELD, 'source', source))
+
         return self.collection.update(
             document(USER_SESSION_ID, session_id),
             push(FORMS_FIELD, questions),

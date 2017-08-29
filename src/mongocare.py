@@ -5,7 +5,7 @@ __all__ = [
     'in_', 'increment', 'inc', 'mark', 'nin', 'not_in',
     'equals', 'exists', 'get', 'increment', 'set_',
     'not_exists', 'ObjectDict', 'or_', 'parse_iso_datetime', 'push', 'pk',
-    'update', 'match', 'project', 'size'
+    'update', 'match', 'project', 'size', 'pull', 'pullAll'
 ]
 
 from datetime import datetime
@@ -126,6 +126,11 @@ def or_(a, b):
     return document('$or', [a, b])
 either = or_
 
+def pull(fieldname, fieldid, value):
+    return {'$pull': {fieldname: {fieldid: value}}}
+
+def pullAll(fieldname, values):
+    return {'$pull': document(fieldname, values)}
 
 def push(fieldname, value):
     return {'$push': document(fieldname, value)}

@@ -39,6 +39,27 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
     var self = this;
     $scope.showProgress = true;
 
+    if (typeof(Storage) !== "undefined") {
+        var localstring = sessionStorage.getItem("questionpages");
+        if (localstring) {
+            try {
+                $scope.pages = JSON.parse(localstring);
+            } catch (e) {
+                // ignore
+            }
+        }
+    }
+    $scope.pages = ($scope.pages || []);
+    $scope.page = ($scope.pages[$routeParams.question || 1] || {});
+    console.log($scope.page);
+    console.log($scope.pages);
+    // TODO http anfrage hole Daten (-> sync über angular)
+/*    $http
+    .get(api.form_target)
+    .success(fuction(data, status) {
+
+    }); */
+
     function setProgress () {
         if(!$routeParams.question || $routeParams.question == 1) {
             $scope.$broadcast('display-progress', 5);
@@ -52,7 +73,8 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
     }
 
     function next () {
-        $scope.page = {};
+        $scope.pages[$routeParams.question || 1] = $scope.page;
+        sessionStorage.setItem("questionpages", JSON.stringify($scope.pages));
         if(!$routeParams.question || $routeParams.question == 1){
             $location.path(api.page_questions_2);
         }
@@ -68,7 +90,6 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
         return $route.current.loadedTemplateUrl;
     }
 
-    $scope.page = {};
     function prepare (formdata) {
         formdata.source = source();
         formdata.submitted = new Date().toISOString();
