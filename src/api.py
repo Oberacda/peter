@@ -253,8 +253,12 @@ class Form(Api):
 
     @familiar
     def post(self):
+        removeresult = yield self.sessions.remove_possibly_existing(self.current_user, self.json)
+        if removeresult["nModified"] > 0:
+            self.info('Removed data from %s for %s' % (self.json.get('source'), self.current_user))
+
         self.debug('Storing data for %s: %s' % (self.current_user, self.json))
-        self.info('Storing data for %s' % (self.current_user))
+        self.info('Storing data from %s for %s' % (self.json.get('source'), self.current_user))
         result = yield self.sessions.save_form(self.current_user, self.json)
 
         # check if all data was collected and seal the document.

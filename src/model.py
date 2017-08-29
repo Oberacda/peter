@@ -307,10 +307,13 @@ class Sessions(object):
     def for_(self, session_id):
         return self.collection.find_one(document(USER_SESSION_ID, session_id))
 
+    def remove_possibly_existing(self, session_id, questions):
+        source = questions.get('source')
+        return self.collection.update(document(USER_SESSION_ID, session_id), pull(FORMS_FIELD, 'source', source))
+
+
     def save_form(self, session_id, questions):
         questions = mark(questions)
-        source = questions.get('source')
-        self.collection.update(document(USER_SESSION_ID, session_id), pull(FORMS_FIELD, 'source', source))
 
         return self.collection.update(
             document(USER_SESSION_ID, session_id),
