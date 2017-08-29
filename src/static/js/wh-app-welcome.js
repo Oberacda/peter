@@ -193,7 +193,7 @@ function getTimesForAll(sessions) {
 
     // NUR DAMIT NICHT KEINE ERGEBNISSE
     if (sessions.length == 0) {
-        return [20*60*1000, 15*60*1000, 4*60*1000]
+        return [13*60*1000, 15*60*1000, 7*60*1000]
     }
 	sessions.forEach(function(session) {
 		times.push(getTimeForSession(session));
