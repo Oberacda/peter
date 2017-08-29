@@ -100,7 +100,6 @@ angular
         notify_results: false
     };
     $scope.email_submitted = false;
-    $scope.show_results = false;
     this.submit = function (data) {
         data.submitted = new Date().toISOString();
         $http
@@ -114,8 +113,6 @@ angular
     $http
     .get(api.sessions)
     .success(function(sessiondata) {
-        // $scope.text = sessiondata;
-        $scope.show_results = true;
         var userTime = getTimeForSession(sessiondata.data.current);
         $scope.mytime = msToMinAndS(userTime);
         var times = getTimesForAll(sessiondata.data.others);
