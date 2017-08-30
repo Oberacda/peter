@@ -222,7 +222,7 @@ angular.module('admin', ['ngRoute', 'ngSanitize', 'charts', 'experimentControls'
         return (session.java < 1)
             || (session.english_level < 3)
             || (session.german_level < 4)
-            || (session.trials < 6)
+            || (session.trials < 4)
             || (session.failed_trials > 1)
             || (session.are_you_serious == 'no')
             || (session.boomerang_participant == 'yes')
