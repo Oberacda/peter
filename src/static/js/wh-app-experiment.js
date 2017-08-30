@@ -187,7 +187,9 @@ function ($http, $q, $scope, $sce, $timeout, $window, api, experiment) {
         recordMouse();
         $scope.report.linenumber = null;
         $scope.report.correction = '';
+        $scope.report.description = '';
         letterbox.clearHighlight();
+        $('#cancel').blur();
     }
 
     function correctAnswer (linenumber) {
@@ -350,7 +352,7 @@ function ($http, $q, $scope, $sce, $timeout, $window, api, experiment) {
     }
 
     function pauseRecordMouse () {
-        $(document).unbind('mousedown');
+        $(document).unbind('mousedown', registerMouse);
     }
 
     function recordMouse () {
