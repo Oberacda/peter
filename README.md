@@ -129,7 +129,7 @@ In case you lose the admin password or forgot to write it down during build, you
 
     $ docker exec -it peter cat /var/peter/.key
 
-Trivia
+Trivia (by JH)
 ======
 The software is called "Peter", which is kind of a backronym for 'Psychologische Erhebung Total Erheblicher Reaktionszeiten' (Psychological Evaluation of Totally Relevant Reaction Times). I kept calling my software the "data client", which my supervisor didn't like very much. He asked me to come up with a name. Jokingly I responded: Ok, so I'll call it Peter.
 
