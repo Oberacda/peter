@@ -159,7 +159,6 @@ function getTimeForSnippet(events) {
         }
         it++;
     }
-    var timeObject = msToMinAndS(elapsedTime);
     return elapsedTime;
 
 }
