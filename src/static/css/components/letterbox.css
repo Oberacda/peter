@@ -60,7 +60,7 @@ div.clear {
     -webkit-box-sizing: content-box;
     border-top: 1px solid #ccc;
     box-sizing: content-box;
-    height: 140px;
+    height: 250px;
     z-index: -1;
 }
 
