@@ -295,7 +295,7 @@ function ($http, $q, $scope, $sce, $timeout, $window, api, experiment) {
                 $scope.labels = results[0].data.data;
                 initializeWarning();
                 this.pages = results[1].data.data;
-                this.grading = results[2].data.data;
+                this.grading = results[2].data.data; //TODO Check for another schema for json.
                 start();
             });
         });
