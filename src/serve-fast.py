@@ -54,7 +54,7 @@ def initialize(connection_string):
         url(r'/api/trial/?', api.Trial, dict(sessions=sessions,trials=trials)),
         url(r'/api/sessions/?', api.Sessions, dict(sessions=sessions)), #Test
         url(r'/api/form/?', api.Form, dict(sessions=sessions, session_status=session_status, trials=trials)),   # post
-        url(r'/api/email/?', api.EmailForm, dict(emails=emails)),   # post
+        #url(r'/api/email/?', api.EmailForm, dict(emails=emails)),   # post
         url(r'/api/admin/db\.json', api.AdminDbDump, dict(sessions=sessions)),
         url(r'/api/admin/sessions/?', api.AdminSessions, dict(sessions=sessions)),
         url(r'/api/admin/emails/?', api.AdminEmails, dict(emails=emails)),
