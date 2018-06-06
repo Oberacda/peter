@@ -1,7 +1,7 @@
-Shorter Identifier Names Take Longer to Comprehend - Replication Package
+API Usability - Influence of different constuctor types - Survey Package
 =====
 
-This repository contains the source code for the web app we used to obtain the data for the experiment described in the paper "Shorter Identifier Names Take Longer to Comprehend", which we submitted to [SANER 2017](http://saner.aau.at/). We tested the influence of identifier length and semantics on program comprehension.
+This repository contains the source code for the web app we used to obtain the data for a experiment described in our essay *API-Usability: Effekte der Konstrukoren*.
 
 The software was written in Python 2.7 using the Tornado web framework and stores all data in a MongoDB. To setup you can either run everything from bare metal or use the provided Dockerfiles to create custom images.
 
