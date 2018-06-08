@@ -1,0 +1,112 @@
+<pre class="line-numbers"><code class="language-java"><span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+ <span class="line"><span class="token comment" spellcheck="true">* Class that allows to send 247 byte arrays to a client via sockets.</span></span>
+ <span class="line"><span class="token comment" spellcheck="true">* The sent byte array are verified by calculating a CRC32 checksum.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @author David Oberacker</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @version 1.0.0</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line">public class <span class="token class-name">DatagramMessenger</span> <span class="token punctuation">{</span></span>
+<span class="line">    </span>
+<span class="line">    <span class="token keyword">private final static</span> int BUFFER_LENGTH <span class="token operator">=</span> 256;</span>
+<span class="line">    <span class="token keyword">private final static</span> int READ_LENGTH <span class="token operator">=</span> BUFFER_LENGTH - 8;</span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">public static</span> void main(String[] args) <span class="token keyword">throws</span> UnknownHostException <span class="token punctuation">{</span></span>
+<span class="line">        InetAddress target <span class="token operator">=</span> Inet4Address.getByName("localhost");</span>
+<span class="line">        <span class="token comment" spellcheck="true">//Creating a new datagram socket for sending and receiving packets.</span></span>
+<span class="line">        DatagramSocket socket <span class="token operator">=</span> null;</span>
+<span class="line">        try <span class="token punctuation">{</span></span>
+<span class="line">            socket <span class="token operator">=</span> <span class="token keyword">new</span> DatagramSocket(8888);</span>
+<span class="line">        <span class="token punctuation">{</span> <span class="token keyword">catch</span> (SocketException exception) <span class="token punctuation">{</span></span>
+<span class="line">            System.err.printf("ERROR > Datagram Socket initilization error: %s\n",</span>
+<span class="line">                    exception.getLocalizedMessage());</span>
+<span class="line">            <span class="token keyword">throw new</span> IllegalStateException("Programm in invalid state, socket cannot be initialized!");</span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token comment" spellcheck="true">//Creating a new data package.</span></span>
+<span class="line">        byte[] dataPacket <span class="token operator">=</span> <span class="token keyword">new</span> byte[BUFFER_LENGTH];</span>
+<span class="line">        int length;</span>
+<span class="line"></span>
+<span class="line">        <span class="token comment" spellcheck="true">//Main loop</span></span>
+<span class="line">        <span class="token keyword">while</span> (true) <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token comment" spellcheck="true">//Preparing the packet to send.</span></span>
+<span class="line">            DatagramPacket packet <span class="token operator">=</span> new DatagramPacket();</span>
+<span class="line">            packet.setTarget(target);</span>
+<span class="line">            packet.setPort(8889);</span>
+<span class="line">            <span class="token comment" spellcheck="true">//Setting all array entries to zero.</span></span>
+<span class="line">            <span class="token keyword">for</span> (int i <span class="token operator">=</span> 0; i <span class="token operator"> &lt; </span> dataPacket.length; i++) <span class="token punctuation">{</span></span>
+<span class="line">                dataPacket[i] <span class="token operator">=</span> 0;</span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">            <span class="token comment" spellcheck="true">//Reading 248 byte from the standard input stream.</span></span>
+<span class="line">            <span class="token keyword">try</span> <span class="token punctuation">{</span></span>
+<span class="line">                length <span class="token operator">=</span> System.in.read(dataPacket, 0, READ_LENGTH);</span>
+<span class="line">            <span class="token punctuation">}</span> <span class="token keyword">catch</span> (IOException e) <span class="token punctuation">{</span></span>
+<span class="line">                e.printStackTrace();</span>
+<span class="line">                <span class="token keyword">break</span>;</span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">            <span class="token comment" spellcheck="true">//Calculating CRC32 checksum.</span></span>
+<span class="line">            CRC32 checksum <span class="token operator">=</span> <span class="token keyword">new</span> CRC32();</span>
+<span class="line">            checksum.update(dataPacket);</span>
+<span class="line">            Long v_checksum <span class="token operator">=</span> checksum.getValue();</span>
+<span class="line">            <span class="token comment" spellcheck="true">//Copying the checksum to the last 8 positions of the dataPacket array</span></span>
+<span class="line">            byte[] checksumArray <span class="token operator">=</span> longToBytes(v_checksum);</span>
+<span class="line">            System.arraycopy(checksumArray, 0, dataPacket, READ_LENGTH, checksumArray.length);</span>
+<span class="line">            <span class="token comment" spellcheck="true">//Adding the 256Byte array to the packet</span></span></span>
+<span class="line">            packet.setDataLength(length);</span>
+<span class="line">            packet.setData(dataPacket);</span>
+<span class="line">            </span>
+<span class="line">            <span class="token keyword">try</span> <span class="token punctuation">{</span></span>
+<span class="line">                socket.send(packet);</span>
+<span class="line">                socket.receive(packet);</span>
+<span class="line">            <span class="token punctuation">}</span> <span class="token keyword">catch</span> (IOException |</span>
+<span class="line">                    SecurityException |</span>
+<span class="line">                    IllegalArgumentException |</span>
+<span class="line">                    IllegalBlockingModeException exc) {</span>
+<span class="line">                System.err.printf("ERROR > Datagram Socket sending error: %s\n", exc.getLocalizedMessage());</span>
+<span class="line">                System.err.printf("ERROR > Packet: \"%s\" discarded!", Arrays.toString(packet.getData()));</span>
+<span class="line">                <span class="token keyword">break</span>;</span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">            System.out.printf("INFO  > Address: \"%s\"\n", packet.getAddress());</span>
+<span class="line">            System.out.printf("INFO  > Port: \"%d\"\n", packet.getPort());</span>
+<span class="line">            System.out.printf("INFO  > Data: \"%s\"\n", Arrays.toString(packet.getData()));</span>
+<span class="line"></span>
+<span class="line">            <span class="token comment" spellcheck="true">//Check if the last 8 byte in the recived package match the checksum for the first 248 byte.</span></span>
+<span class="line">            checksum.update(Arrays.copyOfRange(packet.getData(), 0, READ_LENGTH));</span>
+<span class="line">            <span class="token keyword">if</span> (checksum.getValue() <span class="token operator">==</span> bytesToLong(Arrays.copyOfRange(packet.getData(), READ_LENGTH, BUFFER_LENGHT))) {</span>
+<span class="line">                System.out.print("INFO  > Checksum correct!\n");</span>
+<span class="line">            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="line">                System.out.print("INFO  > Checksum invalid!\n");</span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">        socket.close();</span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment" spellcheck="true">/**</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* Represents a long number (64 bit) as a array of 8 byte.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* The content of the long is copied so both values are independent of another after the array is created.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">*</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* @param x the long to represent as byte array.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* @return the byte array representing the long value. This array has a constant lenght of 8 entries.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">*/</span></span>
+<span class="line">    <span class="token keyword">private static</span> byte[] longToBytes(<span class="token keyword">final</span> long x) <span class="token punctuation">{</span></span>
+<span class="line">        ByteBuffer buffer <span class="token operator">=</span> ByteBuffer.allocate(Long.BYTES);</span>
+<span class="line">        buffer.putLong(x);</span>
+<span class="line">        <span class="token keyword">return</span> buffer.array();</span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment" spellcheck="true">/**</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* Represents a byte array of length 8 as a long value.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* The content of the byte array is copied so both values are independent of another after the long is created.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">*</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* @param bytes the array to represent as a long. IF the array is longer than 8 elements only the first 8 elements</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">*              are used. We assume the bytes in the array are little endian format.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">* @return the long representing the byte array.</span></span>
+<span class="line">     <span class="token comment" spellcheck="true">*/</span></span>
+<span class="line">    <span class="token keyword">private static</span> long bytesToLong(byte[] bytes) <span class="token punctuation">{</span></span>
+<span class="line">        ByteBuffer buffer <span class="token operator">=</span> ByteBuffer.allocate(Long.BYTES);</span>
+<span class="line">        buffer.put(bytes,0, Long.BYTES);</span>
+<span class="line">        buffer.flip();</span>
+<span class="line">        <span class="token keyword">return</span> buffer.getLong();</span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span></code></pre>
