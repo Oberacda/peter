@@ -1,0 +1,1 @@
+﻿docker run --name mongodb -d -v ./data:/data/db cessor/mongodb
