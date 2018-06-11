@@ -16,7 +16,7 @@
 <span class="line"><span class="token comment" spellcheck="true">     * @return     an IP address for the given host name.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     */</span></span>
 <span class="line"><span class="token comment" spellcheck="true">    public static InetAddress getByName(String host)</span></span>
-<span class="line"><span class="token comment" spellcheck="true">    
+<span class="line"><span class="token comment" spellcheck="true">    </span></span>
 <span class="line"><span class="token comment" spellcheck="true">    /** java.net.DatagramSocket</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * Constructs a datagram socket and binds it to the specified port</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * on the local host machine.  The socket will be bound to the</span></span>
@@ -72,7 +72,7 @@
 <span class="line"><span class="token comment" spellcheck="true">     * returns, the {@code DatagramPacket}'s buffer is filled with</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * the data received. The datagram packet also contains the sender's</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * IP address, and the port number on the sender's machine.</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * <p></span></span>
+<span class="line"><span class="token comment" spellcheck="true">     * </span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param      p   the {@code DatagramPacket} into which to place</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *                 the incoming data.</span></span>
@@ -106,7 +106,7 @@
 <span class="line"><span class="token comment" spellcheck="true">     * <code>len</code> bytes, but a smaller number may be read.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * The number of bytes actually read is returned as an integer.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * <p> This method blocks until input data is available, end of file is</span></span>
+<span class="line"><span class="token comment" spellcheck="true">     * This method blocks until input data is available, end of file is</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * detected, or an exception is thrown.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param      b     the buffer into which the data is read.</span></span>
@@ -115,7 +115,7 @@
 <span class="line"><span class="token comment" spellcheck="true">     * @param      len   the maximum number of bytes to read.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @return     the total number of bytes read into the buffer, or</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *             <code>-1</code> if there is no more data because the end of</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     *             the stream has been reached.
+<span class="line"><span class="token comment" spellcheck="true">     *             the stream has been reached.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     */</span></span>
 <span class="line"><span class="token comment" spellcheck="true">    public int read(byte b[], int off, int len) throws IOException</span></span>
 <span class="line"><span class="token comment" spellcheck="true"></span></span>
@@ -141,7 +141,7 @@
 <span class="line">        try <span class="token punctuation">{</span></span>
 <span class="line">            socket <span class="token operator">=</span> <span class="token keyword">new</span> DatagramSocket(8888);</span>
 <span class="line">        <span class="token punctuation">{</span> <span class="token keyword">catch</span> (SocketException exception) <span class="token punctuation">{</span></span>
-<span class="line">            System.err.printf("ERROR > Datagram Socket initilization error: %s\n",</span>
+<span class="line">            System.err.printf("ERROR &#62; Datagram Socket initilization error: %s\n",</span>
 <span class="line">                    exception.getLocalizedMessage());</span>
 <span class="line">            <span class="token keyword">throw new</span> IllegalStateException("Programm in invalid state, socket cannot be initialized!");</span>
 <span class="line">        <span class="token punctuation">}</span></span>
@@ -182,21 +182,21 @@
 <span class="line">                    SecurityException |</span>
 <span class="line">                    IllegalArgumentException |</span>
 <span class="line">                    IllegalBlockingModeException exc) {</span>
-<span class="line">                System.err.printf("ERROR > Datagram Socket sending error: %s\n", exc.getLocalizedMessage());</span>
-<span class="line">                System.err.printf("ERROR > Packet: \"%s\" discarded!", Arrays.toString(packet.getData()));</span>
+<span class="line">                System.err.printf("ERROR &#62; Datagram Socket sending error: %s\n", exc.getLocalizedMessage());</span>
+<span class="line">                System.err.printf("ERROR &#62; Packet: \"%s\" discarded!", Arrays.toString(packet.getData()));</span>
 <span class="line">                <span class="token keyword">break</span>;</span>
 <span class="line">            <span class="token punctuation">}</span></span>
 <span class="line"></span>
-<span class="line">            System.out.printf("INFO  > Address: \"%s\"\n", packet.getAddress());</span>
-<span class="line">            System.out.printf("INFO  > Port: \"%d\"\n", packet.getPort());</span>
-<span class="line">            System.out.printf("INFO  > Data: \"%s\"\n", Arrays.toString(packet.getData()));</span>
+<span class="line">            System.out.printf("INFO  &#62; Address: \"%s\"\n", packet.getAddress());</span>
+<span class="line">            System.out.printf("INFO  &#62; Port: \"%d\"\n", packet.getPort());</span>
+<span class="line">            System.out.printf("INFO  &#62; Data: \"%s\"\n", Arrays.toString(packet.getData()));</span>
 <span class="line"></span>
 <span class="line">            <span class="token comment" spellcheck="true">//Check if the last 8 byte in the recived package match the checksum for the first 248 byte.</span></span>
 <span class="line">            checksum.update(Arrays.copyOfRange(packet.getData(), 0, READ_LENGTH));</span>
 <span class="line">            <span class="token keyword">if</span> (checksum.getValue() <span class="token operator">==</span> bytesToLong(Arrays.copyOfRange(packet.getData(), READ_LENGTH, BUFFER_LENGHT))) {</span>
-<span class="line">                System.out.print("INFO  > Checksum correct!\n");</span>
+<span class="line">                System.out.print("INFO  &#62; Checksum correct!\n");</span>
 <span class="line">            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
-<span class="line">                System.out.print("INFO  > Checksum invalid!\n");</span>
+<span class="line">                System.out.print("INFO  &#62; Checksum invalid!\n");</span>
 <span class="line">            <span class="token punctuation">}</span></span>
 <span class="line">        <span class="token punctuation">}</span></span>
 <span class="line"></span>

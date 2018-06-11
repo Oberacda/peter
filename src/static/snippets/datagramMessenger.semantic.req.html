@@ -1,4 +1,5 @@
-<pre class="line-numbers"><code class="language-java">
+<pre class="line-numbers">
+    <code class="language-java">
 <span class="line"><span class="token comment" spellcheck="true">===Documentation===</span></span>
 <span class="line"></span>
 <span class="line"><span class="token comment" spellcheck="true">    /** java.net.Inet4Address.getByName</span></span>
@@ -7,7 +8,8 @@
 <span class="line"><span class="token comment" spellcheck="true">     * The host name can either be a machine name, such as</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * "{@code java.sun.com}", or a textual representation of its</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * IP address. If a literal IP address is supplied, only the</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * validity of the address format is checked.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * validity of the address format is checked.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * If the host is {@code null} then an {@code InetAddress}</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * representing an address of the loopback interface is returned.</span></span>
@@ -15,13 +17,15 @@
 <span class="line"><span class="token comment" spellcheck="true">     * @param      host   the specified host, or {@code null}.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @return     an IP address for the given host name.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     */</span></span>
-<span class="line"><span class="token comment" spellcheck="true">    public static InetAddress getByName(String host)</span></span>
-<span class="line"><span class="token comment" spellcheck="true">    
+<span class="line"><span class="token comment"
+                         spellcheck="true">    public static InetAddress getByName(String host)</span></span>
+<span class="line"><span class="token comment" spellcheck="true">    </span></span>
 <span class="line"><span class="token comment" spellcheck="true">    /** java.net.DatagramSocket</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * Constructs a datagram socket and binds it to the specified port</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * on the local host machine.  The socket will be bound to the</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * {@link InetAddress#isAnyLocalAddress wildcard} address,</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * an IP address chosen by the kernel.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * an IP address chosen by the kernel.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param      port port to use.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @exception  SocketException  if the socket could not be opened,</span></span>
@@ -31,31 +35,39 @@
 <span class="line"><span class="token comment" spellcheck="true"></span></span>
 <span class="line"><span class="token comment" spellcheck="true">    /** java.net.DatagramPacket</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * Constructs a datagram packet for sending packets of length</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * {@code length} with offset {@code ioffset}to the</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * specified port number on the specified host. The</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * {@code length} with offset {@code ioffset}to the</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * specified port number on the specified host. The</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * {@code length} argument must be less than or equal to</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * {@code buf.length}.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param   buf      the packet data.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param   offset   the packet data offset.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param   length   the packet data length.</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * @param   address  the destination address.</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * @param   port     the destination port number.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * @param   address  the destination address.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * @param   port     the destination port number.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     */</span></span>
 <span class="line"><span class="token comment" spellcheck="true">    public DatagramPacket(byte buf[], int offset, int length, InetAddress address, int port)</span></span>
 <span class="line"><span class="token comment" spellcheck="true">    </span></span>
 <span class="line"><span class="token comment" spellcheck="true">    /** DatagramPacket.send</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * Sends a datagram packet from this socket. The</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * Sends a datagram packet from this socket. The</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * {@code DatagramPacket} includes information indicating the</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * data to be sent, its length, the IP address of the remote host,</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * and the port number on the remote host.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * and the port number on the remote host.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param      p   the {@code DatagramPacket} to be sent.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * @exception  IOException  if an I/O error occurs.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * @exception  IOException  if an I/O error occurs.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @exception  SecurityException  if a security manager exists and its</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *             {@code checkMulticast} or {@code checkConnect}</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     *             method doesn't allow the send.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     *             method doesn't allow the send.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @exception  PortUnreachableException may be thrown if the socket is connected</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *             to a currently unreachable destination. Note, there is no</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *             guarantee that the exception will be thrown.</span></span>
@@ -72,7 +84,7 @@
 <span class="line"><span class="token comment" spellcheck="true">     * returns, the {@code DatagramPacket}'s buffer is filled with</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * the data received. The datagram packet also contains the sender's</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * IP address, and the port number on the sender's machine.</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * <p></span></span>
+<span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param      p   the {@code DatagramPacket} into which to place</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *                 the incoming data.</span></span>
@@ -85,16 +97,19 @@
 <span class="line"><span class="token comment" spellcheck="true">      * A subsequence of array components are copied from the source</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * array referenced by src to the destination array</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * referenced by dest. The number of components copied is</span></span>
-<span class="line"><span class="token comment" spellcheck="true">      * equal to the length argument. The components at</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">      * equal to the length argument. The components at</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * positions srcPos through</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * srcPos+length-1 in the source array are copied into</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * positions destPos through</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * destPos+length-1, respectively, of the destination</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * array.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      *</span></span>
-<span class="line"><span class="token comment" spellcheck="true">      * @param      src      the source array.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">      * @param      src      the source array.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * @param      srcPos   starting position in the source array.</span></span>
-<span class="line"><span class="token comment" spellcheck="true">      * @param      dest     the destination array.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">      * @param      dest     the destination array.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * @param      destPos  starting position in the destination data.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      * @param      length   the number of array elements to be copied.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">      */</span></span>
@@ -106,16 +121,19 @@
 <span class="line"><span class="token comment" spellcheck="true">     * <code>len</code> bytes, but a smaller number may be read.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * The number of bytes actually read is returned as an integer.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * <p> This method blocks until input data is available, end of file is</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * detected, or an exception is thrown.</span></span>
+<span class="line"><span class="token comment" spellcheck="true">     * This method blocks until input data is available, end of file is</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * detected, or an exception is thrown.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param      b     the buffer into which the data is read.</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     * @param      off   the start offset in array <code>b</code></span></span>
-<span class="line"><span class="token comment" spellcheck="true">     *                   at which the data is written.</span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     * @param      off   the start offset in array <code>b</code></span></span>
+<span class="line"><span class="token comment"
+                         spellcheck="true">     *                   at which the data is written.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @param      len   the maximum number of bytes to read.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     * @return     the total number of bytes read into the buffer, or</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     *             <code>-1</code> if there is no more data because the end of</span></span>
-<span class="line"><span class="token comment" spellcheck="true">     *             the stream has been reached.
+<span class="line"><span class="token comment" spellcheck="true">     *             the stream has been reached.</span></span>
 <span class="line"><span class="token comment" spellcheck="true">     */</span></span>
 <span class="line"><span class="token comment" spellcheck="true">    public int read(byte b[], int off, int len) throws IOException</span></span>
 <span class="line"><span class="token comment" spellcheck="true"></span></span>
@@ -130,46 +148,58 @@
 <span class="line"><span class="token comment" spellcheck="true"> */</span></span>
 <span class="line">public class <span class="token class-name">DatagramMessenger</span> <span class="token punctuation">{</span></span>
 <span class="line">    </span>
-<span class="line">    <span class="token keyword">private final static</span> int BUFFER_LENGTH <span class="token operator">=</span> 256;</span>
-<span class="line">    <span class="token keyword">private final static</span> int READ_LENGTH <span class="token operator">=</span> BUFFER_LENGTH - 8;</span>
+<span class="line">    <span class="token keyword">private final static</span> int BUFFER_LENGTH <span
+        class="token operator">=</span> 256;</span>
+<span class="line">    <span class="token keyword">private final static</span> int READ_LENGTH <span
+        class="token operator">=</span> BUFFER_LENGTH - 8;</span>
 <span class="line"></span>
-<span class="line">    <span class="token keyword">public static</span> void main(String[] args) <span class="token keyword">throws</span> UnknownHostException <span class="token punctuation">{</span></span>
+    <span class="line">    <span class="token keyword">public static</span> void <span
+            class="token function">main</span>(String[] args) <span class="token keyword">throws</span> UnknownHostException <span
+            class="token punctuation">{</span></span>
 <span class="line">        InetAddress target <span class="token operator">=</span> Inet4Address.getByName("localhost");</span>
 <span class="line"></span>
 <span class="line">        <span class="token comment" spellcheck="true">//Creating a new datagram socket for sending and receiving packets.</span></span>
 <span class="line">        DatagramSocket socket <span class="token operator">=</span> null;</span>
 <span class="line">        try <span class="token punctuation">{</span></span>
 <span class="line">            socket <span class="token operator">=</span> <span class="token keyword">new</span> DatagramSocket(8888);</span>
-<span class="line">        <span class="token punctuation">{</span> <span class="token keyword">catch</span> (SocketException exception) <span class="token punctuation">{</span></span>
-<span class="line">            System.err.printf("ERROR > Datagram Socket initilization error: %s\n",</span>
+<span class="line">        <span class="token punctuation">{</span> <span class="token keyword">catch</span> (SocketException exception) <span
+        class="token punctuation">{</span></span>
+<span class="line">            System.err.printf("ERROR &#62; Datagram Socket initilization error: %s\n",</span>
 <span class="line">                    exception.getLocalizedMessage());</span>
 <span class="line">            <span class="token keyword">throw new</span> IllegalStateException("Programm in invalid state, socket cannot be initialized!");</span>
 <span class="line">        <span class="token punctuation">}</span></span>
 <span class="line">        <span class="token comment" spellcheck="true">//Creating a new data package.</span></span>
-<span class="line">        byte[] dataPacket <span class="token operator">=</span> <span class="token keyword">new</span> byte[BUFFER_LENGTH];</span>
+<span class="line">        byte[] dataPacket <span class="token operator">=</span> <span
+        class="token keyword">new</span> byte[BUFFER_LENGTH];</span>
 <span class="line">        int length;</span>
 <span class="line"></span>
 <span class="line">        <span class="token comment" spellcheck="true">//Main loop</span></span>
-<span class="line">        <span class="token keyword">while</span> (true) <span class="token punctuation">{</span></span>
-<span class="line">            <span class="token comment" spellcheck="true">//Preparing the packet to send.</span></span>
+<span class="line">        <span class="token keyword">while</span> (true) <span
+        class="token punctuation">{</span></span>
+<span class="line">            <span class="token comment"
+                                     spellcheck="true">//Preparing the packet to send.</span></span>
 <span class="line">            <span class="token comment" spellcheck="true">//Setting all array entries to zero.</span></span>
-<span class="line">            <span class="token keyword">for</span> (int i <span class="token operator">=</span> 0; i <span class="token operator"> &lt; </span> dataPacket.length; i++) <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">for</span> (int i <span class="token operator">=</span> 0; i <span
+        class="token operator"> &lt; </span> dataPacket.length; i++) <span class="token punctuation">{</span></span>
 <span class="line">                dataPacket[i] <span class="token operator">=</span> 0;</span>
 <span class="line">            <span class="token punctuation">}</span></span>
 <span class="line">            <span class="token comment" spellcheck="true">//Reading 248 byte from the standard input stream.</span></span>
 <span class="line">            <span class="token keyword">try</span> <span class="token punctuation">{</span></span>
 <span class="line">                length <span class="token operator">=</span> System.in.read(dataPacket, 0, READ_LENGTH);</span>
-<span class="line">            <span class="token punctuation">}</span> <span class="token keyword">catch</span> (IOException e) <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token punctuation">}</span> <span class="token keyword">catch</span> (IOException e) <span
+        class="token punctuation">{</span></span>
 <span class="line">                e.printStackTrace();</span>
 <span class="line">                <span class="token keyword">break</span>;</span>
 <span class="line">            <span class="token punctuation">}</span></span>
 <span class="line">            <span class="token comment" spellcheck="true">//Calculating CRC32 checksum.</span></span>
-<span class="line">            CRC32 checksum <span class="token operator">=</span> <span class="token keyword">new</span> CRC32();</span>
+<span class="line">            CRC32 checksum <span class="token operator">=</span> <span
+        class="token keyword">new</span> CRC32();</span>
 <span class="line">            checksum.update(dataPacket);</span>
 <span class="line">            Long v_checksum <span class="token operator">=</span> checksum.getValue();</span>
 <span class="line"></span>
 <span class="line">            <span class="token comment" spellcheck="true">//Copying the checksum to the last 8 positions of the dataPacket array</span></span>
-<span class="line">            byte[] checksumArray <span class="token operator">=</span> longToBytes(v_checksum);</span>
+<span class="line">            byte[] checksumArray <span
+        class="token operator">=</span> longToBytes(v_checksum);</span>
 <span class="line">            System.arraycopy(checksumArray, 0, dataPacket, READ_LENGTH, checksumArray.length);</span>
 <span class="line"></span>
 <span class="line">            </span>
@@ -182,21 +212,22 @@
 <span class="line">                    SecurityException |</span>
 <span class="line">                    IllegalArgumentException |</span>
 <span class="line">                    IllegalBlockingModeException exc) {</span>
-<span class="line">                System.err.printf("ERROR > Datagram Socket sending error: %s\n", exc.getLocalizedMessage());</span>
-<span class="line">                System.err.printf("ERROR > Packet: \"%s\" discarded!", Arrays.toString(packet.getData()));</span>
+<span class="line">                System.err.printf("ERROR &#62; Datagram Socket sending error: %s\n", exc.getLocalizedMessage());</span>
+<span class="line">                System.err.printf("ERROR &#62; Packet: \"%s\" discarded!", Arrays.toString(packet.getData()));</span>
 <span class="line">                <span class="token keyword">break</span>;</span>
 <span class="line">            <span class="token punctuation">}</span></span>
 <span class="line"></span>
-<span class="line">            System.out.printf("INFO  > Address: \"%s\"\n", packet.getAddress());</span>
-<span class="line">            System.out.printf("INFO  > Port: \"%d\"\n", packet.getPort());</span>
-<span class="line">            System.out.printf("INFO  > Data: \"%s\"\n", Arrays.toString(packet.getData()));</span>
+<span class="line">            System.out.printf("INFO  &#62; Address: \"%s\"\n", packet.getAddress());</span>
+<span class="line">            System.out.printf("INFO  &#62; Port: \"%d\"\n", packet.getPort());</span>
+<span class="line">            System.out.printf("INFO  &#62; Data: \"%s\"\n", Arrays.toString(packet.getData()));</span>
 <span class="line"></span>
 <span class="line">            <span class="token comment" spellcheck="true">//Check if the last 8 byte in the recived package match the checksum for the first 248 byte.</span></span>
 <span class="line">            checksum.update(Arrays.copyOfRange(packet.getData(), 0, READ_LENGTH));</span>
 <span class="line">            <span class="token keyword">if</span> (checksum.getValue() <span class="token operator">==</span> bytesToLong(Arrays.copyOfRange(packet.getData(), READ_LENGTH, BUFFER_LENGHT))) {</span>
-<span class="line">                System.out.print("INFO  > Checksum correct!\n");</span>
-<span class="line">            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
-<span class="line">                System.out.print("INFO  > Checksum invalid!\n");</span>
+<span class="line">                System.out.print("INFO  &#62; Checksum correct!\n");</span>
+<span class="line">            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span
+        class="token punctuation">{</span></span>
+<span class="line">                System.out.print("INFO  &#62; Checksum invalid!\n");</span>
 <span class="line">            <span class="token punctuation">}</span></span>
 <span class="line">        <span class="token punctuation">}</span></span>
 <span class="line"></span>
@@ -208,11 +239,14 @@
 <span class="line">     <span class="token comment" spellcheck="true">* Represents a long number (64 bit) as a array of 8 byte.</span></span>
 <span class="line">     <span class="token comment" spellcheck="true">* The content of the long is copied so both values are independent of another after the array is created.</span></span>
 <span class="line">     <span class="token comment" spellcheck="true">*</span></span>
-<span class="line">     <span class="token comment" spellcheck="true">* @param x the long to represent as byte array.</span></span>
+<span class="line">     <span class="token comment"
+                              spellcheck="true">* @param x the long to represent as byte array.</span></span>
 <span class="line">     <span class="token comment" spellcheck="true">* @return the byte array representing the long value. This array has a constant lenght of 8 entries.</span></span>
 <span class="line">     <span class="token comment" spellcheck="true">*/</span></span>
-<span class="line">    <span class="token keyword">private static</span> byte[] longToBytes(<span class="token keyword">final</span> long x) <span class="token punctuation">{</span></span>
-<span class="line">        ByteBuffer buffer <span class="token operator">=</span> ByteBuffer.allocate(Long.BYTES);</span>
+    <span class="line">    <span class="token keyword">private static</span> byte[] <span class="token function">longToBytes</span>(<span
+            class="token keyword">final</span> long x) <span class="token punctuation">{</span></span>
+<span class="line">        ByteBuffer buffer <span
+        class="token operator">=</span> ByteBuffer.allocate(Long.BYTES);</span>
 <span class="line">        buffer.putLong(x);</span>
 <span class="line">        <span class="token keyword">return</span> buffer.array();</span>
 <span class="line">    <span class="token punctuation">}</span></span>
@@ -223,13 +257,20 @@
 <span class="line">     <span class="token comment" spellcheck="true">*</span></span>
 <span class="line">     <span class="token comment" spellcheck="true">* @param bytes the array to represent as a long. IF the array is longer than 8 elements only the first 8 elements</span></span>
 <span class="line">     <span class="token comment" spellcheck="true">*              are used. We assume the bytes in the array are little endian format.</span></span>
-<span class="line">     <span class="token comment" spellcheck="true">* @return the long representing the byte array.</span></span>
-<span class="line">     <span class="token comment" spellcheck="true">*/</span></span>
-<span class="line">    <span class="token keyword">private static</span> long bytesToLong(byte[] bytes) <span class="token punctuation">{</span></span>
-<span class="line">        ByteBuffer buffer <span class="token operator">=</span> ByteBuffer.allocate(Long.BYTES);</span>
-<span class="line">        buffer.put(bytes,0, Long.BYTES);</span>
-<span class="line">        buffer.flip();</span>
-<span class="line">        <span class="token keyword">return</span> buffer.getLong();</span>
-<span class="line">    <span class="token punctuation">}</span></span>
-<span class="line"><span class="token punctuation">}</span></span></code></pre>
+<span class="line">     <span class="token comment"
+                              spellcheck="true">* @return the long representing the byte array.</span></span>
+    <span class="line">     <span class="token comment" spellcheck="true">*/</span></span>
+    <span class="line">    <span
+        class="token keyword">private static</span> long <span
+        class="token function">bytesToLong</span>(byte[] bytes) <span
+        class="token punctuation">{</span></span>
+        <span class="line">        ByteBuffer buffer <span
+            class="token operator">=</span> ByteBuffer.allocate(Long.BYTES);</span>
+        <span class="line">        buffer.put(bytes,0, Long.BYTES);</span>
+        <span class="line">        buffer.flip();</span>
+        <span class="line">        <span class="token keyword">return</span> buffer.getLong();</span>
+        <span class="line">    <span class="token punctuation">}</span></span>
+        <span class="line"><span class="token punctuation">}</span></span>
+    </code>
+</pre>
 

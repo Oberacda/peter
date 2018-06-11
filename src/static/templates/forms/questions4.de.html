@@ -1,0 +1,759 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-8 col-lg-offset-2 page-header">
+        <h1>Welche Präferenzen haben sie?</h1>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <progress-bar></progress-bar>
+        <div class="jumbotron">
+          <form class="form" name="questionForm" ng-submit="questionForm.$valid && questionsCtrl.addQuestions(questionForm, page)">
+            <fieldset>
+              <div ng-class="{ 'form-group': questionForm.other_languages_matrix.$pristine, 'form-group has-success': questionForm.other_languages_matrix.$touched && questionForm.other_languages_matrix.$valid, 'form-group has-error': !questionForm.other_languages_matrix.$pristine && questionForm.other_languages_matrix.$invalid }">
+                <legend for="other_languages_matrix">Bitte kreuzen Sie an, wie stark Sie den folgenden Aussagen zustimmen.</legend>
+                <span class="help-block">Wichtig: Es gibt keine richtigen oder falschen Antworten. Nur Ihre Meinung zählt!</span>
+                <table class="table table-condensed">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Stimme gar nicht zu</th>
+                    <th>Stimme nicht zu</th>
+                    <th>Neutral</th>
+                    <th>Stimme zu</th>
+                    <th>Stimme vollständig zu</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>Mir ist es wichtiger, effizient arbeiten zu können als zu wissen, was genau im Hintergrund passiert.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.1" type="radio" name="background" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.1" type="radio" name="background" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.1" type="radio" name="background" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.1" type="radio" name="background" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.1" type="radio" name="background" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Die volle Kontrolle über den Code zu haben erhöht nur die Entwicklungszeit.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.csharp" type="radio" name="csharp" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.2" type="radio" name="developenttime" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.2" type="radio" name="developenttime" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.2" type="radio" name="developenttime" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.2" type="radio" name="developenttime" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtiger, schnell mit der API arbeiten zu können als mich mit der API gut auszukennen.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.3" type="radio" name="fast" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.3" type="radio" name="fast" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.3" type="radio" name="fast" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.3" type="radio" name="fast" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.3" type="radio" name="fast" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ich bin bereit, Zeit zu investieren, um die genaue Funktionsweise einer API zu verstehen.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.4" type="radio" name="functiontime" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.4" type="radio" name="functiontime" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.4" type="radio" name="functiontime" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.4" type="radio" name="functiontime" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.4" type="radio" name="functiontime" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtig, schnell mit der API arbeiten zu können, um mich auf wichtigere Probleme konzentrieren zu können.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.python" type="radio" name="python" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.python" type="radio" name="python" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.python" type="radio" name="python" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.python" type="radio" name="python" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.python" type="radio" name="python" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtiger, DASS etwas funktioniert, als zu wissen, WIE es funktioniert.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.5" type="radio" name="whatoverwhy" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.5" type="radio" name="whatoverwhy" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.5" type="radio" name="whatoverwhy" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.5" type="radio" name="whatoverwhy" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.5" type="radio" name="whatoverwhy" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ich muss die genaue Funktionsweise der API nicht verstehen, solange ich die Ergebnisse bekomme, die ich brauche.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.6" type="radio" name="results" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.6" type="radio" name="results" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.6" type="radio" name="results" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.6" type="radio" name="results" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.6" type="radio" name="results" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                	<tr>
+                      <td>Mir ist es wichtig, die Funktionsweise einer API vollständig zu verstehen, bevor ich sie nutze.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.7" type="radio" name="understanding" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.7" type="radio" name="understanding" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.7" type="radio" name="understanding" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.7" type="radio" name="understanding" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.7" type="radio" name="understanding" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ich möchte das Ergebnis einer Funktion verstehen, bevor ich sie nutze.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.8" type="radio" name="functionunderstand" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.8" type="radio" name="functionunderstand" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.8" type="radio" name="functionunderstand" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.8" type="radio" name="functionunderstand" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.8" type="radio" name="functionunderstand" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Solange ich die benötigten Funktionen zur Verfügung gestellt bekomme, ist mir die genaue Funktionsweise der API egal.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.9" type="radio" name="functionnounderstand" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.9" type="radio" name="functionnounderstand" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.9" type="radio" name="functionnounderstand" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.9" type="radio" name="functionnounderstand" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.9" type="radio" name="functionnounderstand" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtig, mich über den Funktionsumfang einer API informieren zu können.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.10" type="radio" name="scope" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.10" type="radio" name="scope" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.10" type="radio" name="scope" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.10" type="radio" name="scope" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.10" type="radio" name="scope" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtiger, mich auf andere Teile meiner Arbeit zu konzentrieren als eine API effizient nutzen zu können.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.11" type="radio" name="noefficency" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.11" type="radio" name="noefficency" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.11" type="radio" name="noefficency" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.11" type="radio" name="noefficency" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.11" type="radio" name="noefficency" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Es reicht mir, wenn ich die von mir benötigten Funktionen von der API zur Verfügung gestellt bekomme.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.12" type="radio" name="noextras" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.12" type="radio" name="noextras" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.12" type="radio" name="noextras" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.12" type="radio" name="noextras" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.12" type="radio" name="noextras" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtig, möglichst einfach mit der API Ergebnisse erzielen zu können.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.13" type="radio" name="simplicity" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.13" type="radio" name="simplicity" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.13" type="radio" name="simplicity" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.13" type="radio" name="simplicity" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.13" type="radio" name="simplicity" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtiger, effizient zu arbeiten als genau zu kontrollieren, was im Hintergrund passiert.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.14" type="radio" name="efficency" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.14" type="radio" name="efficency" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.14" type="radio" name="efficency" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.14" type="radio" name="efficency" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.14" type="radio" name="efficency" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtig, die volle Kontrolle über die Ausführung meines Codes zu haben.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.15" type="radio" name="control" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.15" type="radio" name="control" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.15" type="radio" name="control" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.15" type="radio" name="control" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.15" type="radio" name="control" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mir ist es wichtiger, mich auf das eigentliche Problem zu konzentrieren als auf die Konfiguration der API. </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.16" type="radio" name="noconfig" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.16" type="radio" name="noconfig" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.16" type="radio" name="noconfig" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.16" type="radio" name="noconfig" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.16" type="radio" name="noconfig" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ich muss die Funktionsweise einer API nicht verstehen.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.17" type="radio" name="nounderstanding" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.17" type="radio" name="nounderstanding" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.17" type="radio" name="nounderstanding" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.17" type="radio" name="nounderstanding" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.17" type="radio" name="nounderstanding" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ich muss nur so viel über die API wissen, dass ich meinen Code zum Laufen bringen kann.</td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.18" type="radio" name="onlyresults" value="0" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.18" type="radio" name="onlyresults" value="1" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.18" type="radio" name="onlyresults" value="2" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.18" type="radio" name="onlyresults" value="3" required>
+                            </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio radio-primary">
+                          <label>
+                              <input ng-model="page.18" type="radio" name="onlyresults" value="4" required>
+                            </label>
+                        </div>
+                      </td>
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+			 </fieldset>
+            <submit-de></submit-de>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

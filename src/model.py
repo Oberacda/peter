@@ -21,7 +21,7 @@ class Pretest(object):
     SEQUENCE_LENGTH = 2
 
     def __init__(self):
-        self.group = ['converter', 'linkedlist', 'familymember', 'emailuser']
+        self.group = ['datagramManager']
 
     def ordering(self, snippets):
         return list(itertools.permutations(snippets, self.SEQUENCE_LENGTH))
@@ -41,8 +41,8 @@ class Final(object):
     SEQUENCE_LENGTH = 2
     def __init__(self):
         self.tasks = ['semantic', 'syntactic']
-        self.identifier_quality = ['short', 'normal']
-        self.group = ['converter', 'linkedlist', 'familymember', 'emailuser','socketserver']
+        self.identifier_quality = ['def', 'req']
+        self.group = ['datagramManager', 'linkedlist', 'familymember', 'emailuser']
         # self.group_a = ['parsequerystring', 'histogram', 'concatlists']
         # self.group_b = ['codestructure', 'readini', 'countchildren']
 

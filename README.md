@@ -44,6 +44,25 @@ If you wish to manipulate the source code, you can also fire up the container an
 
 If everything worked out fine you should have one container running (see ```docker ps```): peter
 
+Using Docker & Build Scripts
+---------
+
+The provided scripts incease the automation of the prevoiusly described docker build.
+To build & run the platform you have to execute:
+
+1. ```./build_docker.(sh/ps1)```
+2. ```./run_mongodb.(sh/ps1)```
+3. ```./run.(sh/ps1)```
+
+Now the platform should run on **http://localhost:5000**.
+
+To stop the platform run the follwing script:
+
+* ```./stop_docker.(sh/ps1)```
+
+To stop and delete all containers:
+
+* ```./reset_docker.(sh/ps1)```
 
 Bare Metal
 ----------
