@@ -8,6 +8,7 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
     page_questions_2: '/2',
     page_tutorial: '/tutorial',
     page_finish: '/#finish',
+    page_questions_3: '/3',
 })
 
 // Prevent Bypassing Routes
@@ -66,6 +67,9 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
             $scope.$broadcast('display-progress', 10);
         }
         if($routeParams.question == 3) {
+            $scope.$broadcast('display-progress', 95);
+        }
+        if($routeParams.question == 4) {
             $scope.$broadcast('display-progress', 90);
         }
     }
@@ -81,6 +85,9 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
         }
         if($routeParams.question == 3) {
             $window.location.href = api.page_finish;
+        }
+        if($routeParams.question == 4) {
+            $window.location.href = api.page_questions_3;
         }
     }
 

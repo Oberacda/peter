@@ -5,7 +5,7 @@ angular.module('experiment', ['ngSanitize', 'experimentControls'])
 
 .value('api', {
     trial: '/api/trial',
-    page_questions: '/questions#/3',
+    page_questions: '/questions#/4',
     page_complete: '/complete',
     snippet_directory: '/static/snippets/',
     assets_grading: '/static/assets/grading.json',
