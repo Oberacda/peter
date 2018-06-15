@@ -109,7 +109,10 @@ def main():
 
     application = Application(routes, **settings)
 
-    server = HTTPServer(application, xheaders=True)
+    server = HTTPServer(application, xheaders=True, ssl_options={
+        "certfile": "/etc/letsencrypt/live/api-usability.teco.edu/cert.pem",
+        "keyfile": "/etc/letsencrypt/live/api-usability.teco.edu/privkey.pem",
+    })
     server.bind(options.port)
     server.start(1)  # Forks multiple sub-processes
     logging.info('Configured for "%s"' % environment)
