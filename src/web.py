@@ -4,6 +4,7 @@ import os
 import uuid
 
 from tornado import gen
+from tornado.ioloop import IOLoop
 from tornado.web import asynchronous, authenticated, RequestHandler, StaticFileHandler
 
 from model import USER_SESSION_ID, ADMIN_ID
@@ -17,16 +18,16 @@ def familiar(fn):
     '''
     return authenticated(gen.coroutine(fn))
 
+class HttpsRedirect(StaticFileHandler):
+    @fast
+    def get(self, path, include_body=True):
+        path += '.html'
+        super(HttpsRedirect, self).get(path, include_body)
 
 # http://tornado.readthedocs.org/en/latest/guide/security.html
 # http://stackoverflow.com/questions/7181785/send-cookies-with-curl
 # curl -b cookies.txt -c cookies.txt http://example.com
 class Authenticated(RequestHandler):
-    def prepare(self):
-        logging.info('Request: %s', self.request.protocol)
-        if self.request.protocol == 'http':
-            logging.info('Redirecting %s to https site', self.request.host)
-            self.redirect('https://' + self.request.host, permanent=False)
 
     IS_ADMIN = False
     def get_current_user(self):
@@ -36,6 +37,8 @@ class Authenticated(RequestHandler):
 
 
 class Home(Authenticated):
+
+
     def initialize(self, path, sessions, trials):
         self.path = path
         self.sessions = sessions

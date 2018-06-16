@@ -110,19 +110,29 @@ def main():
     application = Application(routes, **settings)
 
     try:
-        server = HTTPServer(application, xheaders=True, ssl_options={
+        server_https = HTTPServer(application, xheaders=True, ssl_options={
             "certfile": "/etc/letsencrypt/live/api-usability.teco.edu/cert.pem",
             "keyfile": "/etc/letsencrypt/live/api-usability.teco.edu/privkey.pem",
         })
+        server_https.bind(options.port)
+        server_https.start(1)  # Forks multiple sub-processes
     except ValueError as exc:
         logging.error('HTTPS server couldn\'t be started %s', exc)
         logging.info('HTTP server started')
-        server = HTTPServer(application, xheaders=True)
-    server.bind(options.port)
-    server.start(1)  # Forks multiple sub-processes
+        server_https = HTTPServer(application, xheaders=True)
 
-    logging.info('Configured for "%s"' % environment)
-    logging.info('Running on port %s' % options.port)
+    logging.info('Configured HTTPS for "%s"' % environment)
+    logging.info('Running HTTPS server on port %s' % options.port)
+
+    server_http = HTTPServer(Application([
+        (r"/(.*)", StaticFileHandler, {"path": './static/templates/', "default_filename": "https_required.html"})
+    ],**settings))
+    server_http.bind(80)
+    server_http.start(1)
+
+    logging.info('Configured HTTP for "%s"' % environment)
+    logging.info('Running HTTP server on port %d' % 80)
+
     IOLoop.current().start()
 
 if __name__ == '__main__':
