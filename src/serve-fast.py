@@ -109,12 +109,18 @@ def main():
 
     application = Application(routes, **settings)
 
-    server = HTTPServer(application, xheaders=True, ssl_options={
-        "certfile": "/etc/letsencrypt/live/api-usability.teco.edu/cert.pem",
-        "keyfile": "/etc/letsencrypt/live/api-usability.teco.edu/privkey.pem",
-    })
+    try:
+        server = HTTPServer(application, xheaders=True, ssl_options={
+            "certfile": "/etc/letsencrypt/live/api-usability.teco.edu/cert.pem",
+            "keyfile": "/etc/letsencrypt/live/api-usability.teco.edu/privkey.pem",
+        })
+    except ValueError as exc:
+        logging.error('HTTPS server couldn\'t be started %s', exc)
+        logging.info('HTTP server started')
+        server = HTTPServer(application, xheaders=True)
     server.bind(options.port)
     server.start(1)  # Forks multiple sub-processes
+
     logging.info('Configured for "%s"' % environment)
     logging.info('Running on port %s' % options.port)
     IOLoop.current().start()

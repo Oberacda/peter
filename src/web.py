@@ -22,6 +22,12 @@ def familiar(fn):
 # http://stackoverflow.com/questions/7181785/send-cookies-with-curl
 # curl -b cookies.txt -c cookies.txt http://example.com
 class Authenticated(RequestHandler):
+    def prepare(self):
+        logging.info('Request: %s', self.request.protocol)
+        if self.request.protocol == 'http':
+            logging.info('Redirecting %s to https site', self.request.host)
+            self.redirect('https://' + self.request.host, permanent=False)
+
     IS_ADMIN = False
     def get_current_user(self):
         if self.IS_ADMIN == True:

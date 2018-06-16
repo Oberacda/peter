@@ -19,6 +19,9 @@ class Api(Authenticated):
         self.set_header("Content-Type", "application/json")
 
     def prepare(self):
+        if self.request.protocol == 'http':
+            logging.info('Redirecting {0} to https site', self.request.host)
+            self.redirect('https://' + self.request.host, permanent=False)
         self._prepare_request()
         self._prepare_response()
 
