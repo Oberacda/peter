@@ -74,6 +74,10 @@ class Page(StaticFileHandler):
 
 
 class CompletePage(StaticFileHandler):
+    def prepare(self):
+        if self.request.protocol == 'http':
+            self.redirect('https://' + self.request.host, permanent = False)
+
     @fast
     def get(self, path, include_body=True):
         path += '.html'

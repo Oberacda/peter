@@ -119,6 +119,7 @@ def main():
         logging.info('HTTP server started')
         server = HTTPServer(application, xheaders=True)
     server.bind(options.port)
+    server.bind(80)
     server.start(1)  # Forks multiple sub-processes
 
     logging.info('Configured for "%s"' % environment)
