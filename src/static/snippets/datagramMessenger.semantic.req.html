@@ -203,7 +203,7 @@
 <span class="line">            System.arraycopy(checksumArray, 0, dataPacket, READ_LENGTH, checksumArray.length);</span>
 <span class="line"></span>
 <span class="line">            </span>
-<span class="line">            DatagramPacket packet <span class="token operator">=</span>  <span class="token keyword">new</span> DatagramPacket(dataPacket, 0, 8889, BUFFER_LENGTH, target);</span>
+<span class="line">            DatagramPacket packet <span class="token operator">=</span>  <span class="token keyword">new</span> DatagramPacket(dataPacket, 0, 8889, target, <span class="token keyword">BUFFER_LENGTH</span>);</span>
 <span class="line">            </span>
 <span class="line">            <span class="token keyword">try</span> <span class="token punctuation">{</span></span>
 <span class="line">                socket.send(packet);</span>
