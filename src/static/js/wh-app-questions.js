@@ -8,7 +8,7 @@ angular.module('questions', ['ngRoute', 'weaselDirectives', 'experimentControls'
     page_questions_2: '/2',
     page_tutorial: '/tutorial',
     page_finish: '/#finish',
-    page_questions_3: '/3',
+    page_questions_3: 'questions#/3',
 })
 
 // Prevent Bypassing Routes
