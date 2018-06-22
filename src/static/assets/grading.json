@@ -14,10 +14,10 @@
             "Syntactic": "currentEntry.deleteNextEntry()",
             "Replace": [";",""]
         },
-        "emailuser": {
+        "passwordutils": {
             "Correction": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature);",
             "Semantic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", null);",
-            "Line": 17,
+            "Line": 52,
             "Syntactic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature];",
             "Replace": [")","]"]
         },

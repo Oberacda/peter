@@ -23,9 +23,14 @@
                 </div>
                 <div class="radio radio-primary">
                   <label>
-                    <input ng-model="page.sex" type="radio" name="sex" value="o" required>Andere/ Keine Angabe
+                    <input ng-model="page.sex" type="radio" name="sex" value="o" required>Andere
                   </label>
                 </div>
+		<div class="radio raido-primary">
+			<label>
+				<input ng-model="page.sex" type="radio" name="sex" value="n" required>Keine Angabe
+			</label>
+		</div>
               </div>
               <div ng-class="{ 'form-group': questionForm.age.$pristine, 'form-group has-success': questionForm.age.$touched && questionForm.age.$valid, 'form-group has-error': !questionForm.age.$pristine && questionForm.age.$invalid }">
                 <legend for="age">12. Wie alt sind Sie? </legend>

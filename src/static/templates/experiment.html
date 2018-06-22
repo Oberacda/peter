@@ -43,6 +43,15 @@
 
           <div ng-controller="experimentController as experimentCtrl">
 
+            <!-- Clock -->
+            <div id="time" ng-show="showTime"> <!-- style="position: fixed; right: 10px; z-index: 100000; background-color: #eeeeee; border-radius: 2px; -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="clock" class="pull-right"></div>
+                </div>
+              </div>
+            </div>
+
             <!-- Presentation -->
             <div id="presentation" ng-show="showHint">
               <progress-bar></progress-bar>
@@ -56,14 +65,6 @@
                 <letterbox></letterbox>
             </div>
 
-            <!-- Clock -->
-            <div id="time" ng-show="showTime">
-              <div class="row">
-                <div class="col-md-12">
-                  <div id="clock" class="pull-right"></div>
-                </div>
-              </div>
-            </div>
            <error-found-dialog></error-found-dialog>
            <feedback-box></feedback-box>
         </div> <!-- Controller, Scope -->
