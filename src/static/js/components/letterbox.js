@@ -110,8 +110,14 @@
             currentLine: currentLine,
             highlight: highlightLine,
             reset: reset,
-            scrollDown: function () { scrollShield(DOWN); },
-            scrollUp: function () { scrollShield(UP); },
+            scrollDown: function () {
+                scrollShield(DOWN);
+                window.scrollBy(0,DOWN)
+                },
+            scrollUp: function () {
+                scrollShield(UP);
+                 window.scrollBy(0,UP)
+                },
             canScroll: canScroll,
             uncover: uncover
         }
