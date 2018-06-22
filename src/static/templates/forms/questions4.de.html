@@ -16,18 +16,18 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th>Stimme gar nicht zu</th>
+                    <th style="width:100px" align="right">Stimme gar nicht zu</th>
                     <th></th>
                     <th></th>
                     <th></th>
-                    <th>Stimme vollständig zu</th>
+                    <th style="width:100px" align="left">Stimme voll-ständig zu</th>
                   </tr>
                 </thead>
                 <tbody>
                     <tr>
                       <td>Mir ist es wichtiger, effizient arbeiten zu können als zu wissen, was genau im Hintergrund passiert.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.background" type="radio" name="background" value="0" required>
                             </label>
@@ -65,7 +65,7 @@
                     <tr>
                       <td>Die volle Kontrolle über den Code zu haben erhöht nur die Entwicklungszeit.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.developmenttime" type="radio" name="developmenttime" value="0" required>
                             </label>
@@ -103,7 +103,7 @@
                     <tr>
                       <td>Mir ist es wichtiger, schnell mit der API arbeiten zu können als mich mit der API gut auszukennen.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.fast" type="radio" name="fast" value="0" required>
                             </label>
@@ -141,7 +141,7 @@
                     <tr>
                       <td>Ich bin bereit, Zeit zu investieren, um die genaue Funktionsweise einer API zu verstehen.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.functiontime" type="radio" name="functiontime" value="0" required>
                             </label>
@@ -179,7 +179,7 @@
                     <tr>
                       <td>Mir ist es wichtig, schnell mit der API arbeiten zu können, um mich auf wichtigere Probleme konzentrieren zu können.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.fastproblems" type="radio" name="fastproblems" value="0" required>
                             </label>
@@ -217,7 +217,7 @@
                     <tr>
                       <td>Mir ist es wichtiger, DASS etwas funktioniert, als zu wissen, WIE es funktioniert.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.whatoverwhy" type="radio" name="whatoverwhy" value="0" required>
                             </label>
@@ -255,7 +255,7 @@
                     <tr>
                       <td>Ich muss die genaue Funktionsweise der API nicht verstehen, solange ich die Ergebnisse bekomme, die ich brauche.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.results" type="radio" name="results" value="0" required>
                             </label>
@@ -293,7 +293,7 @@
                 	<tr>
                       <td>Mir ist es wichtig, die Funktionsweise einer API vollständig zu verstehen, bevor ich sie nutze.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.understanding" type="radio" name="understanding" value="0" required>
                             </label>
@@ -331,7 +331,7 @@
                     <tr>
                       <td>Ich möchte das Ergebnis einer Funktion verstehen, bevor ich sie nutze.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.functionunderstand" type="radio" name="functionunderstand" value="0" required>
                             </label>
@@ -369,7 +369,7 @@
                     <tr>
                       <td>Solange ich die benötigten Funktionen zur Verfügung gestellt bekomme, ist mir die genaue Funktionsweise der API egal.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.functionnounderstand" type="radio" name="functionnounderstand" value="0" required>
                             </label>
@@ -407,7 +407,7 @@
                     <tr>
                       <td>Mir ist es wichtig, mich über den Funktionsumfang einer API informieren zu können.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.scope" type="radio" name="scope" value="0" required>
                             </label>
@@ -445,7 +445,7 @@
                     <tr>
                       <td>Mir ist es wichtiger, mich auf andere Teile meiner Arbeit zu konzentrieren als eine API effizient nutzen zu können.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.noefficency" type="radio" name="noefficency" value="0" required>
                             </label>
@@ -483,7 +483,7 @@
                     <tr>
                       <td>Es reicht mir, wenn ich die von mir benötigten Funktionen von der API zur Verfügung gestellt bekomme.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.noextras" type="radio" name="noextras" value="0" required>
                             </label>
@@ -521,7 +521,7 @@
                     <tr>
                       <td>Mir ist es wichtig, möglichst einfach mit der API Ergebnisse erzielen zu können.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.simplicity" type="radio" name="simplicity" value="0" required>
                             </label>
@@ -559,7 +559,7 @@
                     <tr>
                       <td>Mir ist es wichtiger, effizient zu arbeiten als genau zu kontrollieren, was im Hintergrund passiert.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.efficency" type="radio" name="efficency" value="0" required>
                             </label>
@@ -597,7 +597,7 @@
                     <tr>
                       <td>Mir ist es wichtig, die volle Kontrolle über die Ausführung meines Codes zu haben.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.control" type="radio" name="control" value="0" required>
                             </label>
@@ -635,7 +635,7 @@
                     <tr>
                       <td>Mir ist es wichtiger, mich auf das eigentliche Problem zu konzentrieren als auf die Konfiguration der API. </td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.noconfig" type="radio" name="noconfig" value="0" required>
                             </label>
@@ -673,7 +673,7 @@
                     <tr>
                       <td>Ich muss die Funktionsweise einer API nicht verstehen.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.nounderstanding" type="radio" name="nounderstanding" value="0" required>
                             </label>
@@ -711,7 +711,7 @@
                     <tr>
                       <td>Ich muss nur so viel über die API wissen, dass ich meinen Code zum Laufen bringen kann.</td>
                       <td>
-                        <div class="radio radio-primary">
+                        <div class="radio radio-primary" align="right">
                           <label>
                               <input ng-model="page.onlyresults" type="radio" name="onlyresults" value="0" required>
                             </label>
