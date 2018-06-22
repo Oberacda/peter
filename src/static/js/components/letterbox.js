@@ -17,7 +17,7 @@
     function Letterbox (options) {
         options = options || {};
         var editor = options.editor || '#code';
-        var LINE_HEIGHT = 20;
+        var LINE_HEIGHT = 80;
         var UP = -LINE_HEIGHT;
         var DOWN = LINE_HEIGHT;
 
