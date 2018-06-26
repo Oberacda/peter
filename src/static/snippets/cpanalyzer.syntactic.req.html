@@ -1,0 +1,138 @@
+<pre class="line-numbers"><code class="language-java">
+<span class="line"></span>
+<span class="line"><span class="token operator">==</span><span class="token operator">=</span>Documentation<span class="token operator">==</span><span class="token operator">=</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Constructs a new {@code MathContext} with a specified</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * precision and default rounding mode of HALF_UP.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * {@code precision}:</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * the number of digits to be used for an operation; results are</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * rounded to this precision</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param setPrecision The non-negative {@code int} precision setting.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @throws IllegalArgumentException if the {@code setPrecision} parameter is less</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *         than zero.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token function">MathContext</span><span class="token punctuation">(</span><span class="token keyword">int</span> setPrecision<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * The constant zero as a BigDecimal with scale zero.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @since 1.5</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword"> public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> BigDecimal ZERO</span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Constructs a BigDecimal using the BigDecimal(int) constructor and then</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * rounds according to the MathContext.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param val the value for the initial (unrounded) BigDecimal</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param mc the MathContext specifying the rounding</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @throws ArithmeticException if the result is inexact but the rounding type</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * is RoundingMode.UNNECESSARY</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @since 1.5</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword"> public</span> BigDecimal <span class="token punctuation">(</span><span class="token keyword">int</span> val<span class="token punctuation">,</span> MathContext mc<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Returns a BigDecimal whose value is found first by calling the</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * method add(val) and then by rounding according to the MathContext mc.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param val the augend</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param mc the MathContext for rounding</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @throws ArithmeticException if the value is inexact but the rounding is</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * RoundingMode.UNNECESSARY</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @return &lt;code>this&lt;/code> + &lt;code>val&lt;/code>, rounded if need be</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @since 1.5</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword"> public</span> BigDecimal add <span class="token punctuation">(</span>BigDecimal val<span class="token punctuation">,</span> MathContext mc<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Returns a BigDecimal whose value is found first by calling the</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * method subtract(val) and then by rounding according to the MathContext mc.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param val the subtrahend</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param mc the MathContext for rounding</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @throws ArithmeticException if the value is inexact but the rounding is</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * RoundingMode.UNNECESSARY</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @return &lt;code>this&lt;/code> - &lt;code>val&lt;/code>, rounded if need be</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @since 1.5</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword"> public</span> BigDecimal subtract <span class="token punctuation">(</span>BigDecimal val<span class="token punctuation">,</span> MathContext mc<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Returns a BigDecimal whose value is (this x val) before it is rounded</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * according to the MathContext mc.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param val the multiplicand</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param mc the MathContext for rounding</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @return a new BigDecimal with value approximately (this x val)</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @throws ArithmeticException if the value is inexact but the rounding mode</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * is RoundingMode.UNNECESSARY</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @since 1.5</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword"> public</span> BigDecimal multiply <span class="token punctuation">(</span>BigDecimal val<span class="token punctuation">,</span> MathContext mc<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Returns a BigDecimal whose value is determined by first calling pow(n)</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * and then by rounding according to the MathContext mc.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param n the power</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param mc the MathContext</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @return the new BigDecimal</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @throws ArithmeticException if n &lt; 0 or n > 999999999 or if the result is</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * inexact but the rounding is RoundingMode.UNNECESSARY</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @since 1.5</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword"> public</span> BigDecimal <span class="token function">pow</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> MathContext mc<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token operator">==</span><span class="token operator">=</span>End of Documentation<span class="token operator">==</span><span class="token operator">=</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChangepointsAnalyzer</span> <span class="token punctuation">{</span></span>
+<span class="line"></span>
+<span class="line">	<span class="token comment" spellcheck="true">// Calculates the accumulated distance from the linear regression of {@code points}</span></span>
+<span class="line">	<span class="token comment" spellcheck="true">// to the line represented by {@code points}</span></span>
+<span class="line">	<span class="token comment" spellcheck="true">// All calculations are done with perfect precision if possible</span></span>
+<span class="line">	<span class="token comment" spellcheck="true">// Assume every datapoint is defined by an int y and int x</span></span>
+<span class="line">	<span class="token keyword">public</span> BigDecimal <span class="token function">calcLinRegCost</span><span class="token punctuation">(</span>Point<span class="token punctuation">[</span><span class="token punctuation">]</span> points<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">		<span class="token keyword">if</span> <span class="token punctuation">(</span>points<span class="token punctuation">.</span>length <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> BigDecimal<span class="token punctuation">.</span>ZERO<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">		BigDecimal gradient<span class="token punctuation">;</span></span>
+<span class="line">		BigDecimal yIntercept<span class="token punctuation">;</span></span>
+<span class="line">		BigDecimal coefficient<span class="token punctuation">;</span></span>
+<span class="line">		BigDecimal result <span class="token operator">=</span> BigDecimal<span class="token punctuation">.</span>ZERO<span class="token punctuation">;</span></span>
+<span class="line">		BigDecimal length <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span>points<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">		BigDecimal sumYX <span class="token operator">=</span> BigDecimal<span class="token punctuation">.</span>ZERO<span class="token punctuation">;</span></span>
+<span class="line">		BigDecimal sumY <span class="token operator">=</span> BigDecimal<span class="token punctuation">.</span>ZERO<span class="token punctuation">;</span></span>
+<span class="line">		BigDecimal sumX <span class="token operator">=</span> BigDecimal<span class="token punctuation">.</span>ZERO<span class="token punctuation">;</span></span>
+<span class="line">		BigDecimal sumXX <span class="token operator">=</span> BigDecimal<span class="token punctuation">.</span>ZERO<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">		BigDecimal<span class="token punctuation">[</span><span class="token punctuation">]</span> line <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">[</span>points<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">		MathContext mc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MathContext</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">		<span class="token comment" spellcheck="true">// calculate needed sums</span></span>
+<span class="line">		<span class="token keyword">for</span> <span class="token punctuation">(</span>Point p <span class="token operator">:</span> points<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">			<span class="token comment" spellcheck="true">// sumYX += p.y * p.x</span></span>
+<span class="line">			sumYX<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y <span class="token operator">*</span> p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">			<span class="token comment" spellcheck="true">// sumY += p.y</span></span>
+<span class="line">			sumY<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">			<span class="token comment">// sumX += p.x</span></span>
+<span class="line">			sumX<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">			<span class="token comment" spellcheck="true">// sumXX += p.x * p.x</span></span>
+<span class="line">			sumXX<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x <span class="token operator">*</span> p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">		<span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">		<span class="token comment" spellcheck="true">// coefficient = length * sumXX - sumX * sumX</span></span>
+<span class="line">		coefficient <span class="token operator">=</span> sumXX<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>sumX<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">		<span class="token comment" spellcheck="true">// gradient = (length * sumYX - sumY * sumX) / coefficient</span></span>
+<span class="line">		gradient <span class="token operator">=</span> length<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span>sumYX<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>sumY<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span>sumX<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span>coefficient<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">		<span class="token comment" spellcheck="true">// yIntercept = (sumXX * sumY - sumYX * sumX) / coefficient</span></span>
+<span class="line">		yIntercept <span class="token operator">=</span> sumXX<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span>sumY<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>sumYX<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span>sumX<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span>coefficient<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">		<span class="token comment" spellcheck="true">// calculate the line of the linear regression and add the differences from the original array to result</span></span>
+<span class="line">		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> points<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">			line<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> gradient<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>yIntercept<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">			<span class="token comment" spellcheck="true">// result += |line[i] - points[i].y|</span></span>
+<span class="line">			result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>mc<span class="token punctuation">)</span><span class="token punctuation">,</span> mc<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">		<span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">		<span class="token keyword">return</span> result<span class="token punctuation">;</span></span>
+<span class="line">	<span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+</pre></code>
