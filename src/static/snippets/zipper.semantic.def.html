@@ -1,0 +1,182 @@
+<pre class="line-numbers"><code class="language-java">
+<span class="line"><span class="token operator">==</span><span class="token operator">=</span>Documentation<span class="token operator">==</span><span class="token operator">=</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Creates a string from the byte array {@code data} with the use of the {@code encoding} i.e. UTF-8</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token function">String</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data<span class="token punctuation">,</span> String encoding<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** FileInputStream</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Creates a &lt;code>FileInputStream&lt;/code> by</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * opening a connection to an actual file,</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * the file named by the path name &lt;code>name&lt;/code></span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * in the file system.  A new &lt;code>FileDescriptor&lt;/code></span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * object is created to represent this file</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * connection.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param      name   the system-dependent file name.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @exception  FileNotFoundException  if the file does not exist,</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *                   is a directory rather than a regular file,</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *                   or for some other reason cannot be opened for</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *                   reading</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token function">FileInputStream</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** FileInputStream.read</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Reads up to &lt;code>b.length&lt;/code> bytes of data from this input</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * stream into an array of bytes. This method blocks until some input</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * is available.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param      b   the buffer into which the data is read.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @return     the total number of bytes read into the buffer, or</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *             &lt;code>-1&lt;/code> if there is no more data because the end of</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *             the file has been reached.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @exception  IOException  if an I/O error occurs.</span></span>
+<span class="line"><span class="token comment" spellcheck="true">*/</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">byte</span> b<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** FileOutputStream</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Creates a file output stream to write to the file with the</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * specified name. A new &lt;code>FileDescriptor&lt;/code> object is</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * created to represent this file connection.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param      name   the system-dependent filename</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @exception  FileNotFoundException  if the file exists but is a directory</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *                   rather than a regular file, does not exist but cannot</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *                   be created, or cannot be opened for any other reason</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token function">FileOutputStream</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** FileOutputStream.write</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Writes &lt;code>b.length&lt;/code> bytes from the specified byte array</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * to this file output stream.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param      b   the data.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @exception  IOException  if an I/O error occurs.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">byte</span> b<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** Inflater</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * This constructor creates an inflater </span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token function">Inflater</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** Inflater.setInput</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Sets the current input to to be decompressed.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">setInput</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buf<span class="token punctuation">)</span> </span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** Inflater.inflate</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Inflates bytes from the current input and stores them in {@code buf}.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @param buf</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *            the buffer where decompressed data bytes are written.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @return the number of bytes inflated.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @throws DataFormatException</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *             if the underlying stream is corrupted or was not compressed</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *             using a {@code Deflater}.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">inflate</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buf<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** Deflater</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Constructs a new {@code Deflater} instance using the default compression</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * level. A header is added to the output by default;</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token function">Deflater</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** Deflater.setInput</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Sets the input buffer the {@code Deflater} will use to extract uncompressed bytes</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * for later compression.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">setInput</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buf<span class="token punctuation">,</span> <span class="token keyword">int</span> offset<span class="token punctuation">,</span> <span class="token keyword">int</span> byteCount<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** Deflater.setCompressionLevel</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Sets the compression level. From 0 (uncompressed, best speed) to 9 (most compression, slowest speed)</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">setCompressionLevel</span><span class="token punctuation">(</span><span class="token keyword">int</span> level<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** Deflater.finish</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Indicates to the {@code Deflater} that all uncompressed input has been provided</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * to it.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/** deflater.deflate</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * Deflates the data into the</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * supplied buffer.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> *</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @return number of bytes of compressed data written to {@code buf}.</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">deflate</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buf<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token operator">==</span><span class="token operator">=</span>End of Documentation<span class="token operator">==</span><span class="token operator">=</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">/**</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * class with a function that allows data to be appended to a compressed file</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @author Calvin Urankar</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> * @version 1.0.0</span></span>
+<span class="line"><span class="token comment" spellcheck="true"> */</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Zipper</span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token comment" spellcheck="true">   // Assume that this is always enough to hold the data required</span>
+<span class="line"><span class="token keyword">   private</span><span class="token keyword">final</span> <span class="token keyword">int</span> ENOUGH <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">   private</span>String pathToCompressedFile <span class="token operator">=</span> <span class="token string">"/home/somePath/compressed.txt"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">   /**</span></span>
+<span class="line"><span class="token comment" spellcheck="true">    * Method should decompress the file {@code pathToCompressFile}, append the String {@code data} </span></span>
+<span class="line"><span class="token comment" spellcheck="true">    * and compress the new Data in order for it to be stored in the same file again</span></span>
+<span class="line"><span class="token comment" spellcheck="true">    * @param data the String to be appended</span></span>
+<span class="line"><span class="token comment" spellcheck="true">    */</span></span>
+<span class="line"><span class="token keyword">   public</span> <span class="token keyword">void</span> <span class="token function">appendDataToCompressedFile</span><span class="token punctuation">(</span>String data<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">      try</span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token comment" spellcheck="true">           // get compressed Data from File</span>
+<span class="line">           FileInputStream compressedInputReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>pathToCompressedFile<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> compressedInput <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> compressedFile<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">           compressedInputReader<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>compressedInput<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           compressedInputReader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">           // decompress data</span>
+<span class="line">           <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> uncompressedInput <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span>ENOUGH<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">           Inflater inflater <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Inflater</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           inflater<span class="token punctuation">.</span><span class="token function">setInput</span><span class="token punctuation">(</span>compressedInput<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           <span class="token keyword">int</span> resultLength <span class="token operator">=</span> inflater<span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>uncompressedInput<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           inflater<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment" spellcheck="true">           // trim() is fine here</span></span>
+<span class="line">           String input <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>uncompressedInput<span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">           // Append new Data to decompressed old data</span></span>
+<span class="line">           String newData <span class="token operator">=</span> input <span class="token operator">+</span> <span class="token string">";"</span> <span class="token operator">+</span> data<span class="token punctuation">;</span></span>
+<span class="line">           <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> outputBytes <span class="token operator">=</span> newData<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">           // Compress the data</span></span>
+<span class="line">           <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> output <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span>ENOUGH<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">           Deflater deflater <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Deflater</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           deflater<span class="token punctuation">.</span><span class="token function">setInput</span><span class="token punctuation">(</span>outputBytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> outputBytes<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           deflater<span class="token punctuation">.</span><span class="token function">setCompressionLevel</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           deflater<span class="token punctuation">.</span><span class="token function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           <span class="token keyword">int</span> compressedLength <span class="token operator">=</span> deflater<span class="token punctuation">.</span><span class="token function">deflate</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           deflater<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">           // write data to file</span></span>
+<span class="line">           FileOutputStream fileOutput <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>pathToCompressedFile<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           fileOutput<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           fileOutput<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           fileOutput<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">           <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> <span class="token operator">|</span> DataFormatException e<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">              e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           <span class="token punctuation">}</span></span>
+<span class="line">   <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment" spellcheck="true">           // helper function to convert byte array to a long number</span></span>
+<span class="line">   <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">bytesToLong</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">           ByteBuffer buffer <span class="token operator">=</span> ByteBuffer<span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span>Long<span class="token punctuation">.</span>BYTES<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           buffer<span class="token punctuation">.</span><span class="token function">flip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">           <span class="token keyword">return</span> buffer<span class="token punctuation">.</span><span class="token function">getLong</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">   <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</pre></code>
