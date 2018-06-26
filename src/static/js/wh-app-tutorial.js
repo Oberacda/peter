@@ -89,10 +89,6 @@ angular.module('tutorial', ['ngSanitize', 'experimentControls'])
                 frame.highlight(scope.labels.example_line_number);
             }, 500);
         },
-        correction: function (scope, page) {
-            annotate('#correction', page);
-            scope.report.correction = scope.labels.example_correction;
-        },
         description: function (scope, page) {
             annotate('#description', page);
             scope.report.description = scope.labels.example_description;
