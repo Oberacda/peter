@@ -223,7 +223,6 @@
                 "- Finden Sie den Fehler, der das defekte Verhalten des Codes verursacht",
                 "- Verschieben Sie den sichtbaren Bereich mit den Pfeiltasten",
                 "- Drücken Sie die Leertaste, wenn Sie den Fehler gefunden haben",
-                "- Korrigieren sie den Fehler in der Zeile ohne neue Klassen, Methoden oder Variablen hinzuzufügen",
                 "- Sie haben pro Snippet bis zu 10 Minuten Zeit",
                 "- Sie haben maximal 3 Versuche pro Snippet, um den Fehler zu finden",
 		"- Markieren sie jeweils die Zeile in der der Fehler zu Laufzeit autreten wird"
