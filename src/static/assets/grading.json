@@ -24,7 +24,7 @@
         "cpanalyzer": {
             "Correction": "convertedInput += capitalizeFirstLetter(singleWordParts[i]);",
             "Semantic": "convertedInput += lowercaseFirstLetter(singleWordParts[i]);",
-            "Line": 112,
+            "Line": 111,
             "Syntactic": "convertedInput -= capitalizeFirstLetter(singleWordParts[i]);",
             "Replace": ["+","-"]
         }
