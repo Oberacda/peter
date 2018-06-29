@@ -10,7 +10,7 @@
         "zipper": {
             "Correction": "currentEntry.deleteNextEntry();",
             "Semantic": "currentEntry.next.deleteNextEntry();",
-            "Line": 154,
+            "Line": 155,
             "Syntactic": "currentEntry.deleteNextEntry()",
             "Replace": [";",""]
         },
