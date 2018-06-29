@@ -17,7 +17,7 @@
         "passwordutils": {
             "Correction": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature);",
             "Semantic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", null);",
-            "Line": 52,
+            "Line": 189,
             "Syntactic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature];",
             "Replace": [")","]"]
         },
