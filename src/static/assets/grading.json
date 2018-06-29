@@ -3,37 +3,30 @@
         "datagramMessenger": {
             "Correction": "DatagramPacket packet = new DatagramPacket(dataPacket, 0, BUFFER_LENGTH, target, 8889);",
             "Semantic": "DatagramPacket packet = new DatagramPacket(dataPacket, 0, 8889, BUFFER_LENGTH target);",
-            "Line": 176,
+            "Line": 144,
             "Syntactic": "DatagramPacket packet = new DatagramPacket(dataPacket, 0, BUFFER_LENGTH target, 8889);",
             "Replace": [","," "]
         },
-        "linkedlist": {
+        "zipper": {
             "Correction": "currentEntry.deleteNextEntry();",
             "Semantic": "currentEntry.next.deleteNextEntry();",
-            "Line": 12,
+            "Line": 154,
             "Syntactic": "currentEntry.deleteNextEntry()",
             "Replace": [";",""]
         },
         "passwordutils": {
             "Correction": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature);",
             "Semantic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", null);",
-            "Line": 52,
+            "Line": 189,
             "Syntactic": "StyledText signature = (StyledText) getSettingOrAlternative(\"signature\", defaultSignature];",
             "Replace": [")","]"]
         },
-        "converter": {
+        "cpanalyzer": {
             "Correction": "convertedInput += capitalizeFirstLetter(singleWordParts[i]);",
             "Semantic": "convertedInput += lowercaseFirstLetter(singleWordParts[i]);",
-            "Line": 9,
+            "Line": 112,
             "Syntactic": "convertedInput -= capitalizeFirstLetter(singleWordParts[i]);",
             "Replace": ["+","-"]
-        },
-        "familymember": {
-            "Correction": "result = result || parent.isParentOf(sibling);",
-            "Semantic":  "result = result || sibling.isParentOf(parent);",
-            "Line": 23,
-            "Syntactic":  "result = result || parent.isParentOf(sibling),",
-            "Replace": [";",","]
         }
     }
 }
