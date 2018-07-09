@@ -118,8 +118,8 @@
 <span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Zipper</span> <span class="token punctuation">{</span></span>
 <span class="line"></span>
 <span class="line"><span class="token comment" spellcheck="true">   // Assume that this is always enough to hold the data required</span>
-<span class="line"><span class="token keyword">   private</span><span class="token keyword">final</span> <span class="token keyword">int</span> ENOUGH <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span></span>
-<span class="line"><span class="token keyword">   private</span>String pathToCompressedFile <span class="token operator">=</span> <span class="token string">"/home/somePath/compressed.txt"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">   private </span><span class="token keyword">final</span> <span class="token keyword">int</span> ENOUGH <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">   private </span>String pathToCompressedFile <span class="token operator">=</span> <span class="token string">"/home/somePath/compressed.txt"</span><span class="token punctuation">;</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span class="token comment" spellcheck="true">   /**</span></span>
@@ -131,7 +131,7 @@
 <span class="line"><span class="token keyword">      try</span> <span class="token punctuation">{</span></span>
 <span class="line"><span class="token comment" spellcheck="true">           // get compressed Data from File</span>
 <span class="line">           FileInputStream compressedInputReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>pathToCompressedFile<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="line">           <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> compressedInput <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> compressedFile<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">           <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> compressedInput <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span>ENOUGH<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
 <span class="line">           compressedInputReader<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>compressedInput<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line">           compressedInputReader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span>
